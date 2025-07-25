@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz - Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar fancy-navbar">
+
+
+
+    <span class="brand"><span class="brand-glow">Quiz App</span></span>
+    <span>
+      <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="index.html">Home</a>
+      <a href="results_history.html">Old Results</a>
+    </span>
+</nav>
+<div class="quiz-hero">
+    <div class="quiz-main">
+        <div id="timerBar"></div>
+        <div id="timer" class="quiz-timer"></div>
+        <div id="questionArea"></div>
+        <div class="quiz-controls">
+            <button id="prevBtn" class="quiz-nav">Previous</button>
+            <button id="nextBtn" class="quiz-nav">Next</button>
+            <button id="submitBtn" class="btn-main">Submit</button>
+            <button id="restartBtn" class="btn-main" style="margin-left: 14px; background:#e94560;">Restart Quiz</button>
+        </div>
+    </div>
+</div>
+<footer class="footer-fancy">
+    &copy; 2025 A Md Akram Hossain &amp; Mubasshir Al Shahriar Production.
+</footer>
+
+<script src="app.js"></script>
+<audio id="sound-correct" src="sounds/correct.mp3" preload="auto"></audio>
+<audio id="sound-wrong" src="sounds/wrong.mp3" preload="auto"></audio>
+
+</body>
+</html>
