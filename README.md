@@ -7,8 +7,13 @@ Group Members: i) Md Akram Hossain, ii) Mubasshir Al Shahriar
 Session: Summer 2025
 
 
-Commit #1: initial index.html by Mubasshir Al Shahriar Date, Time: July 24, around 9:50 p.m
+Commit #1: initial index.html [by Mubasshir Al Shahriar Date, Time: July 24, around 9:50 p.m]
 
-Making the actual first commit by adding the initial index.html. Might need to make changes/modify later according to the upcoming files and the files Md Akram Hossain working on. This commit will allow me to see the basic/initial structure of the home/starting page. Next, I will put an initial CSS file focusing on only this page. Md Akram Hossain is working on actual well made CSS file which will make most of the .html pages way better. Until I hear back from Hossain with the updated CSS, I will have this .html and initial testing CSS file.
+=> Making the actual first commit by adding the initial index.html. Might need to make changes/modify later according to the upcoming files and the files Md Akram Hossain working on. This commit will allow me to see the basic/initial structure of the home/starting page. Next, I will put an initial CSS file focusing on only this page. Md Akram Hossain is working on actual well made CSS file which will make most of the .html pages way better. Until I hear back from Hossain with the updated CSS, I will have this .html and initial testing CSS file.
+
+
+Commit #2: Some small modification on top of my last commit (on index.html file) [by Mubasshir Al Shahriar Date, Time: July 24, around 10:24 p.m]
+ 
+=> Fixing the skeleton footer section. Doing some small modifications by changing some texts. Assigning a better name for the project and putting that at the homepage.
 
 
