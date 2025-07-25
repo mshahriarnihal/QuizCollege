@@ -1,0 +1,132 @@
+/* This is a basic CSS style. For now keeping it here temporarily to get an idea how the index page would look. Expecting Md Akram Hossain to replace it with the one he working an I helped slightly.  */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #2562a7;
+    margin: 0 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.darkmode-btn {
+    margin-right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+.home-hero {
+    padding: 40px 20px;
+    background: #e3f2fd;
+}
+
+.home-main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.home-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.big-hero {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.home-feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.home-feature-list li {
+    margin-bottom: 8px;
+}
+
+.star {
+    color: gold;
+    margin-right: 5px;
+}
+
+
+.btn-main {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #2562a7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-main:hover {
+    background-color: #1b4c87;
+}
+.home-svgbox {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.qmark-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.footer-fancy {
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f0f0;
+    font-size: 0.9rem;
+    color: #555;
+}
