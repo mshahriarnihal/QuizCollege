@@ -17,3 +17,8 @@ Commit #2: Some small modification on top of my last commit (on index.html file)
 => Fixing the skeleton footer section. Doing some small modifications by changing some texts. Assigning a better name for the project and putting that at the homepage.
 
 
+Commit #3: Creating a testing CSS file only for current index.html [by Mubasshir Al Shahriar Date, Time: July 24, around 10:45 p.m]
+=> This is a basic CSS style. For now keeping it here temporarily to get an idea how the index page would look. Expecting Md Akram Hossain to replace it with the one he working an I helped slightly. This current one is basically modified version of a previous testing css file. 
+
+
+
