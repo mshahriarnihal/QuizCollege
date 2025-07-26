@@ -91,7 +91,7 @@ questions.json
 - Once these are done, I will start working on backend hosting. 
 
 
-### Commit #7: Pushed app.js file  
+### Commit #7: Pushed sounds folder with appropiate audio files  
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 25, ~09:35 p.m.
 - Chose and downloaded a short audio file. 
@@ -106,7 +106,7 @@ questions.json
 - This page will show the current results of the quiz
 - currently working on another page which will show the full result of the attempts
 
-   ### Commit #9: Pushed the result.history html page  
+### Commit #9: Pushed the result.history html page  
 **Author**: Md Akram Hossain
 **Date, Time**: July 25, ~11:20 p.m.
 
