@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Old Quiz Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar fancy-navbar">
+    <span class="brand"><span class="brand-glow">Quiz App</span></span>
+    <span>
+      <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="index.html">Home</a>
+      <a href="results_history.html" class="active-link">Old Results</a>
+    </span>
+</nav>
+<div class="quiz-hero">
+    <div class="quiz-main">
+        <h2>Previous Results</h2>
+        <div id="historyArea"></div>
+    </div>
+</div>
+<footer class="footer-fancy">
+    &copy; 2025 
+</footer>
+<audio id="sound-timer" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b03fa1c8.mp3" preload="auto"></audio>
+<audio id="sound-click" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b03fa1c8.mp3" preload="auto"></audio>
+<script>
+    function applyDarkMode(state) {
+        if(state === "dark") document.body.classList.add("dark");
+        else document.body.classList.remove("dark");
+        localStorage.setItem("theme", state);
+        if(document.getElementById('darkModeToggle')) {
+            document.getElementById('darkModeToggle').textContent = state === "dark" ? "☀️" : "🌙";
+        }
+    }
+    function toggleDarkMode() {
+        let mode = document.body.classList.contains("dark") ? "light" : "dark";
+        applyDarkMode(mode);
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+        let theme = localStorage.getItem("theme");
+        if(!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = "dark";
+        }
+        applyDarkMode(theme || "light");
+        if(document.getElementById('darkModeToggle')) {
+            document.getElementById('darkModeToggle').onclick = toggleDarkMode;
+        }
+        // Results listing
+        let history = JSON.parse(localStorage.getItem('quizHistory') || "[]");
+        let area = document.getElementById('historyArea');
+        if(!history.length) {
+            area.innerHTML = "<p>No past results found.</p>";
+        } else {
+            area.innerHTML = history.reverse().map((r, idx) => `
+          <div class="question-card" style="margin-bottom:18px;">
+            <b>Quiz #${history.length-idx}</b><br>
+            <b>Score:</b> ${r.score} / ${r.total}
+            <ul style="margin-top:7px;">
+            ${r.summary.map((q,i) => `
+              <li>
+                Q${i+1}: ${q.question}
+                <span style="color:${q.isCorrect?'#12bb67':'#e94560'};">
+                  (${q.isCorrect ? "✔️" : "❌"})
+                </span>
+              </li>
+            `).join("")}
+            </ul>
+          </div>
+        `).join("");
+        }
+    });
+</script>
+</body>
+</html>
