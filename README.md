@@ -141,3 +141,16 @@ questions.json
 - Modification on navbar: some small design changes. 
 - Made an animated gradient background here for the home page. 
 - Made the question mark symbol/SVG bounce so that it looks more lively & interacting.
+
+
+### Commit #12: Final Deployment (Till Project #2 part, would need to work more to satisfy the requirements of Project #3). 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 26, ~03:47 a.m.
+
+- Done making finishing touch before deployment on Heroku.
+- Created and added Procfile which is an essential to complete the deployment on heroku properly.
+- Added process.env.PORT as a port in the server.js (coded by Md Akram Hossain) in order to deploy on heroku.
+- Added another necessary dependency (start) manually on the package.json file so that so that heroku can recognize that it needs to run server.js.
+- Finally, deployed the project (till current update) successfully on heroku, and our web application "Quiz College" is live now!
+- Tested the deployed project. It is running perfectly, smoothly, and also perfectly accessible.
+- URL for the deployed project: https://quizcollege-390a56929cad.herokuapp.com/ 
