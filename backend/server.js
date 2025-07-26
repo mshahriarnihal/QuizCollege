@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; /* Original author: Md Akram Hossain. Modification here by Mubasshir Al Shahriar on July 26: Adding process.env.PORT here in order to deploy on heroku. */
 
 app.use(cors());
 app.use(express.json());
