@@ -115,7 +115,7 @@ questions.json
 - few things needed to be fixed otherwise
 - asking partner to check my files and make adjustment if necessary
   
-<h3> <font color = "blue"> Some Mentionable Updates from Mubasshir: </font> </h3>
+<h3 style="color: blue;"> Some Mentionable Updates from Mubasshir: </h3>
 **Date, Time**: July 26, ~12:19 a.m.
 
 - Currently I am checking all the files Md Akram Hossain has worked on so far. Expecting him to check mine to stay on the same page.
