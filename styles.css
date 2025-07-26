@@ -1,4 +1,6 @@
-// designed by Akram and trusted by Mobasshir
+/* This is the enhanced and most up to date version of our CSS file. Designed mostly by Md Akram Hossain. Mubasshir Al Shahriar is making some adjustment, addition, and slight modifications. */
+
+/* designed by Akram and trusted by Mubasshir */
 
 body {
     font-family: 'Segoe UI', 'Arial', sans-serif;
@@ -8,33 +10,41 @@ body {
     min-height: 100vh;
     transition: background 0.3s, color 0.3s;
 }
+
+/* Mubasshir's modification on navbar: some small design changes. Last modification time on this part: around 12:45 a.m. July 26. */
 .navbar {
-    background: #274bbd;
-    color: #fff;
-    padding: 0.6em 2.5vw 0.6em 1.3em;
+    background: linear-gradient(to right, #5B21B6, #7C3AED);
+    color: #F9FAFB;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.9em 4.1vw 1.9em 2.5em;  /* original size set by Md: 0.6em 2.5vw 0.6em 1.3em;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.2em;
 }
+
+
 .brand {
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.7em;
     letter-spacing: 1px;
 }
 .brand-glow {
-    text-shadow: 0 0 8px #e5ebff, 0 0 1px #0b3b9e;
+    color: #E0E7FF;
+    text-shadow: 0 0 8px #A78BFA;
 }
 .navbar a {
-    color: #fff;
+    color: #E0F2FE;
+    transition: color 0.99s ease, text-shadow 0.3s ease;
     margin-left: 18px;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.18s;
     position: relative;
 }
 .navbar a.active-link, .navbar a:hover {
-    color: #99e6ff;
+    color: #F43286 !important;
+    text-shadow: 0 0 10px #F43287;
     border-bottom: 2px solid #99e6ff;
 }
 .darkmode-btn {
@@ -281,6 +291,39 @@ body.dark ::-webkit-scrollbar-thumb {
 }
 
 
+/* At this part, Mubasshir Al Shahriar is adding and making some modifications to adjust the design and enhance. */
+/* Making an animated gradient background here for the home page. */
+.animated-bg {
+    min-height: 87vh;
+    background: linear-gradient(-45deg, #e3f0ff 0%, #c8e7ff 25%, #e5e0ff 55%, #b3e6ff 100%);
+    background-size: 300% 300%;
+    animation: bgMove 14s ease-in-out infinite;
+}
+@keyframes bgMove {
+    0%,100% { background-position: 0% 51%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Here trying to make the question Mark symbol/SVG bounce so that it looks more lively, interacting. */
+.qmark-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.qmark-bounce {
+    animation: bounceY 2.2s infinite cubic-bezier(0.68,-0.55,0.27,1.55);
+    filter: drop-shadow(0 8px 26px #a6c9ff77);
+}
+@keyframes bounceY {
+    0%,100% { transform: translateY(0);}
+    40% { transform: translateY(-24px);}
+    55% { transform: translateY(-12px);}
+    70% { transform: translateY(-18px);}
+    80% { transform: translateY(-8px);}
+    90% { transform: translateY(-6px);}
+}
+
+/* Modification ends here.   */
 
 /* --- Fancy fade in on home --- */
 .animated-fadein { animation: fadeinMove 1.5s; }
