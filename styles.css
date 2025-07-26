@@ -1,11 +1,12 @@
-/* This is a basic CSS style. For now keeping it here temporarily to get an idea how the index page would look. Expecting Md Akram Hossain to replace it with the one he working an I helped slightly.  */
+/* This is a temporary basic CSS style for testing purpose only. For now keeping it here temporarily to get an idea how the index.html and quiz.html, the 2 frint end html file I pushed already, would look. This is actually an modified version of the previous testing CSS, this modified one covers basic design for index and quiz page only. Expecting Md Akram Hossain to replace it with the one he working an I helped slightly, when he is done giving the final touch  */
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #222;
 }
 
+/* Links */
 a {
     text-decoration: none;
     color: #2562a7;
@@ -15,6 +16,8 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
 
 
 .navbar {
@@ -31,6 +34,10 @@ a:hover {
     font-size: 1.4rem;
 }
 
+.brand-glow {
+    color: #2562a7;
+}
+
 .darkmode-btn {
     margin-right: 10px;
     background: none;
@@ -39,7 +46,7 @@ a:hover {
     cursor: pointer;
 }
 
-
+/* Home (home-hero) Section */
 .home-hero {
     padding: 40px 20px;
     background: #e3f2fd;
@@ -89,7 +96,7 @@ a:hover {
     margin-right: 5px;
 }
 
-
+/* For the buttons, let's see how this one looks */
 .btn-main {
     padding: 10px 20px;
     font-size: 1rem;
@@ -98,11 +105,22 @@ a:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .btn-main:hover {
     background-color: #1b4c87;
 }
+
+.big-btn {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+}
+
+.neon-glow {
+    box-shadow: 0 0 8px #82b9f9;
+}
+
 .home-svgbox {
     flex: 1;
     text-align: center;
@@ -123,10 +141,70 @@ a:hover {
 }
 
 
+
+
+
+/* This part is for the quiz.html page */
+.quiz-hero {
+    padding: 30px 20px;
+    background: #fff;
+}
+
+.quiz-main {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+#timerBar {
+    height: 10px;
+    background-color: #82b9f9;
+    margin-bottom: 10px;
+    transition: width 1s linear;
+}
+
+.quiz-timer {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #e94560;
+}
+
+#questionArea {
+    font-size: 1.2rem;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.quiz-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.quiz-nav {
+    padding: 10px 18px;
+    font-size: 1rem;
+    background-color: #cccccc;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quiz-nav:hover {
+    background-color: #bbb;
+}
+
+
 .footer-fancy {
     text-align: center;
     padding: 15px;
     background-color: #f0f0f0;
     font-size: 0.9rem;
     color: #555;
+    margin-top: 30px;
 }
