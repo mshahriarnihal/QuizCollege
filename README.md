@@ -101,7 +101,7 @@ questions.json
 - Once these are done, I will start working on backend hosting. 
 
 
-### Commit #7: Pushed app.js file  
+### Commit #7: Pushed sounds folder with audio files 
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 25, ~09:35 p.m.
 - Chose and downloaded a short audio file. 
