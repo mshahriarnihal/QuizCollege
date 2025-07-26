@@ -67,6 +67,15 @@ questions.json
 - Express Definition
 - Express: Operating at high speed.
 
+  ### Commit #4: Uploaded the backend folder with some required backend files  
+**Author**: Md Akram Hossain
+**Date, Time**: July 25, ~10:50 p.m.
+
+- DEsi gned result.html page
+- This page will show the current results of the quiz
+- currently working on another page which will show the full result of the attempts
+
+
 ### Commit #5: Pushed quiz.html front end file  
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 25, ~07:36 p.m.  
