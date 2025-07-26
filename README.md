@@ -8,7 +8,7 @@
 **Session**: Summer 2025  
 
 ## Commit History
-(Here keeping together only the main and mentionable commits, changes, modifications, works)
+(Here keeping together only the main and mentionable commits, changes, modifications, works to keep track, collaborate, and to make sure viewers can get a good overview of the gradual development process of our project)
 
 
 ### Commit #1: Initial index.html  
@@ -114,5 +114,16 @@ questions.json
 - This page will show the total results of the quiz score
 - few things needed to be fixed otherwise
 - asking partner to check my files and make adjustment if necessary
-- 
+  
+<h3> Some Mentionable Updates from Mubasshir: </h3>
+**Date, Time**: July 26, ~12:19 a.m.
+
+- Currently I am checking all the files Md Akram Hossain has worked on so far. Expecting him to check mine to stay on the same page.
+- Checked the results.html and results_history.html files pushed by Md Hossain, everything looks perfect so far.  
+- Just fixed the footer of the results_history.html page designed by Md Akram Hossain so that the footer looks same in the pages I designed and in pages Hossain has designed.
+- Next I am gonna check the CSS file and make additional changes that I have already prepared, and make any other changes if really needs.
+- After that, I will communicate with Hossain and start working on backend's hosting. These are the current plans for the remaining phase of this project (project #2 part).
+
+
+
 
