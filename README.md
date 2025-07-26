@@ -41,9 +41,31 @@
 
 ### Commit #4: Uploaded the backend folder with some required backend files  
 **Author**: Md Akram Hossain
+**Date, Time**: July 25, ~10:40 p.m.  
 
 <!--Expecting Md Akram Hossain to update this part here and write what he uploaded just to keep track-->....   
-
+Files
+server.js
+Purpose: The main backend entry point, implementing an Express web server to handle HTTP requests, API logic, and serve the frontend.
+Key Features:
+Starts the Express server (port 3000).
+Handles /api/start-quiz endpoint to send random questions to the client.
+Handles /api/submit-quiz endpoint to score answers and return results.
+Why It’s Necessary: This file is critical as it defines the backend, enabling API functionality and serving the application live.
+package.json
+Purpose: Defines Node.js dependencies (e.g., express, cors), scripts, and project metadata.
+Key Features:
+Ensures consistent dependency installation via npm install.
+Required for cloud deployment platforms like Render or Railway.
+Why It’s Necessary: Acts as the project’s manifest, essential for running and deploying the server.
+package-lock.json
+Purpose: Automatically generated file that locks dependency versions for consistent, reproducible builds.
+Why It’s Necessary: Ensures environment consistency across development and deployment (optional for GitHub but recommended).
+questions.json
+Purpose: Stores quiz questions, answer choices, and correct answers in an easily accessible format.
+Key Features:Read by the server to randomly select and send questions to the client.Supports easy updates or additions to the question set.Why It’s Necessary: The quiz functionality depends on this file for its question data.
+Express Definition
+Express: Operating at high speed.
 
 ### Commit #5: Pushed quiz.html front end file  
 **Author**: Mubasshir Al Shahriar  
