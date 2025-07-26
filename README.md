@@ -69,3 +69,13 @@
 - Next, I will upload appropriate sound track, adjust the path/directory in quiz.html file if needed. Then, I will work further with the CSS file and study the files Md Akram Hossain working on and make any adjustment if necessary. 
 - Once these are done, I will start working on backend hosting. 
 
+
+### Commit #7: Pushed app.js file  
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 25, ~09:35 p.m.
+- Chose and downloaded a short audio file. 
+- Implementing it through app.js and adding it to quiz.html page to play after answering each question to let user instantly know if their attempt going correct or wrong.
+- Tested it locally, working correctly.
+
+
+
