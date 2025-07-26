@@ -125,5 +125,19 @@ questions.json
 - After that, I will communicate with Hossain and start working on backend's hosting. These are the current plans for the remaining phase of this project (project #2 part).
 
 
+### Commit #10: Enhanced CSS by Md Akram Hossain  
+**Author**: --
+**Date, Time**: --
+
+<!-- Keeping this place blank and asking my partner Md Akram Hosssain to update it with the information about the enhanced version of CSS file he uploaded few hours ago. Keeping this section as Commit #10 so that we both can keep track of the flow of the work and it doesn't get messed up.-->
 
 
+### Commit #11: Further modifying the enhanced CSS file (update 3.1) ehich was initially deployed by Md Akram Hossain 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 26, ~01:35 a.m.
+
+
+- On this commit I am making some addition, further enhancement, small modifications on the initial CSS Md Akram Hossain has deployed.
+- Modification on navbar: some small design changes. 
+- Made an animated gradient background here for the home page. 
+- Made the question mark symbol/SVG bounce so that it looks more lively & interacting.
