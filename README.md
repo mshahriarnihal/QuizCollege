@@ -53,3 +53,19 @@
 - As I am not done with the app.js server-side work yet, also have not pushed that yet, and the CSS file is not completely ready yet, this file should only show the skeleton version. - To make it actually dynamic, and to make the questions appear, I am working on server-side part too, which I will push next. 
 - Also, on this file, have added a script with a relative part of 2 sound file, which I am trying to make working, but need to wait until I finish the app.js part and also choose and upload actual sound tracks.
 
+
+### Commit #6: Pushed app.js file  
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 25, ~08:45 p.m.  
+
+
+- Current version (till now) completely coded by me.
+- This file contains almost all main frontend logic for all dynamic features and makes connection between files. 
+- I have created this and tested this locally with other sample files, it is working correctly. 
+- Might need to make some changes later to host and make it live properly. 
+- This app.js handles page switching, built for API requests (will have to work more if need anything else later), timer, sound effects, dark mode, answer selection, score computation etc. 
+- It basically controls the navigation and user experience across all pages too. 
+- Though I have not put any audio track in Github's directory yet (as of 8:45 pm, July 25), in my local machine (my laptop) I have tested with sample sound track too and it worked well after some trial and error. 
+- Next, I will upload appropriate sound track, adjust the path/directory in quiz.html file if needed. Then, I will work further with the CSS file and study the files Md Akram Hossain working on and make any adjustment if necessary. 
+- Once these are done, I will start working on backend hosting. 
+
