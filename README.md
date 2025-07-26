@@ -67,15 +67,6 @@ questions.json
 - Express Definition
 - Express: Operating at high speed.
 
-  ### Commit #4: Uploaded the backend folder with some required backend files  
-**Author**: Md Akram Hossain
-**Date, Time**: July 25, ~10:50 p.m.
-
-- DEsi gned result.html page
-- This page will show the current results of the quiz
-- currently working on another page which will show the full result of the attempts
-
-
 ### Commit #5: Pushed quiz.html front end file  
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 25, ~07:36 p.m.  
@@ -83,7 +74,6 @@ questions.json
 - This html file contains the basic structure and main interface of the quiz page. 
 - As I am not done with the app.js server-side work yet, also have not pushed that yet, and the CSS file is not completely ready yet, this file should only show the skeleton version. - To make it actually dynamic, and to make the questions appear, I am working on server-side part too, which I will push next. 
 - Also, on this file, have added a script with a relative part of 2 sound file, which I am trying to make working, but need to wait until I finish the app.js part and also choose and upload actual sound tracks.
-
 
 ### Commit #6: Pushed app.js file  
 **Author**: Mubasshir Al Shahriar  
@@ -101,12 +91,28 @@ questions.json
 - Once these are done, I will start working on backend hosting. 
 
 
-### Commit #7: Pushed sounds folder with audio files 
+### Commit #7: Pushed app.js file  
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 25, ~09:35 p.m.
 - Chose and downloaded a short audio file. 
 - Implementing it through app.js and adding it to quiz.html page to play after answering each question to let user instantly know if their attempt going correct or wrong.
 - Tested it locally, working correctly.
 
+ ### Commit #8: Uploaded the backend folder with some required backend files  
+**Author**: Md Akram Hossain
+**Date, Time**: July 25, ~10:50 p.m.
 
+- DEsi gned result.html page
+- This page will show the current results of the quiz
+- currently working on another page which will show the full result of the attempts
+
+   ### Commit #9: Pushed the result.history html page  
+**Author**: Md Akram Hossain
+**Date, Time**: July 25, ~11:20 p.m.
+
+- Designed resultHistory.html page
+- This page will show the total results of the quiz score
+- few things needed to be fixed otherwise
+- asking partner to check my files and make adjustment if necessary
+- 
 
