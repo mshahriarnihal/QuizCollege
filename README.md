@@ -153,4 +153,12 @@ questions.json
 - Added another necessary dependency (start) manually on the package.json file so that so that heroku can recognize that it needs to run server.js.
 - Finally, deployed the project (till current update) successfully on heroku, and our web application "Quiz College" is live now!
 - Tested the deployed project. It is running perfectly, smoothly, and also perfectly accessible.
-- URL for the deployed project: https://quizcollege-390a56929cad.herokuapp.com/ 
+- URL for the deployed project: https://quizcollege-390a56929cad.herokuapp.com/
+
+
+### Commit #13: Favicon png icon/logo 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 26, ~04:40 a.m.
+
+- Designed a basic icon/logo for the web pages.
+- Added it to html pages of our project.
