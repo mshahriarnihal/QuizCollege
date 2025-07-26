@@ -1,210 +1,330 @@
-/* This is a temporary basic CSS style for testing purpose only. For now keeping it here temporarily to get an idea how the index.html and quiz.html, the 2 frint end html file I pushed already, would look. This is actually an modified version of the previous testing CSS, this modified one covers basic design for index and quiz page only. Expecting Md Akram Hossain to replace it with the one he working an I helped slightly, when he is done giving the final touch  */
+// designed by Akram and trusted by Mobasshir
 
 body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(120deg, #f8fcff 0%, #d5f3ff 100%);
+    color: #1a2340;
     margin: 0;
-    background-color: #f4f4f4;
-    color: #222;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
 }
-
-/* Links */
-a {
-    text-decoration: none;
-    color: #2562a7;
-    margin: 0 10px;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-
-
-
 .navbar {
+    background: #274bbd;
+    color: #fff;
+    padding: 0.6em 2.5vw 0.6em 1.3em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
+    font-size: 1.2em;
 }
-
 .brand {
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.4em;
+    letter-spacing: 1px;
 }
-
 .brand-glow {
-    color: #2562a7;
+    text-shadow: 0 0 8px #e5ebff, 0 0 1px #0b3b9e;
 }
-
+.navbar a {
+    color: #fff;
+    margin-left: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.18s;
+    position: relative;
+}
+.navbar a.active-link, .navbar a:hover {
+    color: #99e6ff;
+    border-bottom: 2px solid #99e6ff;
+}
 .darkmode-btn {
-    margin-right: 10px;
     background: none;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.4em;
+    margin-right: 18px;
     cursor: pointer;
+    color: #ffe080;
+    outline: none;
+    transition: color 0.2s;
 }
-
-/* Home (home-hero) Section */
 .home-hero {
-    padding: 40px 20px;
-    background: #e3f2fd;
+    padding: 2.4em 0 0 0;
 }
-
 .home-main {
-    max-width: 1000px;
-    margin: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2vw;
 }
-
 .home-flex {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 32px;
 }
-
 .home-text {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
+    flex: 2;
+    min-width: 0;
 }
-
-.big-hero {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.home-feature-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-.home-feature-list li {
-    margin-bottom: 8px;
-}
-
-.star {
-    color: gold;
-    margin-right: 5px;
-}
-
-/* For the buttons, let's see how this one looks */
-.btn-main {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #2562a7;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-main:hover {
-    background-color: #1b4c87;
-}
-
-.big-btn {
-    font-size: 1.2rem;
-    padding: 12px 24px;
-}
-
-.neon-glow {
-    box-shadow: 0 0 8px #82b9f9;
-}
-
 .home-svgbox {
     flex: 1;
-    text-align: center;
-    padding: 20px;
-}
-
-.qmark-bounce {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-
-
-
-
-/* This part is for the quiz.html page */
-.quiz-hero {
-    padding: 30px 20px;
-    background: #fff;
-}
-
-.quiz-main {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-#timerBar {
-    height: 10px;
-    background-color: #82b9f9;
-    margin-bottom: 10px;
-    transition: width 1s linear;
-}
-
-.quiz-timer {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #e94560;
-}
-
-#questionArea {
-    font-size: 1.2rem;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.quiz-controls {
+    min-width: 160px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
 }
-
-.quiz-nav {
-    padding: 10px 18px;
-    font-size: 1rem;
-    background-color: #cccccc;
+@media (max-width: 850px) {
+    .home-flex { flex-direction: column-reverse; gap: 0; }
+    .home-svgbox { margin-bottom: 0.7em; }
+}
+.big-hero {
+    font-size: 2.3em;
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: #183170;
+    text-shadow: 0 0 18px #f1f8ff;
+}
+.subtitle {
+    font-size: 1.19em;
+    color: #375088;
+}
+.howto-list {
+    padding-left: 1.3em;
+    font-size: 1.09em;
+    color: #3e6190;
+    margin-bottom: 0.8em;
+}
+.btn-main {
+    background: linear-gradient(90deg,#0eaaff,#0080ff);
     border: none;
-    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.14em;
+    padding: 0.62em 1.7em;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.19s, box-shadow 0.18s;
+    box-shadow: 0 2px 8px #d8f0ff;
 }
-
-.quiz-nav:hover {
-    background-color: #bbb;
+.btn-main:active {
+    background: linear-gradient(90deg,#0080ff,#0eaaff);
 }
-
-
+.big-btn {
+    font-size: 1.15em;
+    padding: 0.8em 2.5em;
+    margin-top: 0.6em;
+}
+.quiz-hero {
+    padding: 2.3em 0 0 0;
+}
+.quiz-main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2vw;
+}
+.quiz-timer {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #113570;
+}
+.question-card {
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 2px 22px #b0d6ff35;
+    padding: 1.2em 1.35em 1em 1.35em;
+    margin: 1.1em 0 0.5em 0;
+    transition: background 0.2s;
+}
+.question-main {
+    margin-bottom: 0.6em;
+}
+.question-count {
+    font-size: 1.04em;
+    color: #168cf7;
+    font-weight: bold;
+}
+.question-title {
+    font-size: 1.18em;
+    font-weight: bold;
+    color: #243066;
+    margin: 0.1em 0 0.5em 0;
+}
+.question-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.question-options li {
+    margin-bottom: 0.4em;
+}
+.question-options input[type=radio] {
+    margin-right: 7px;
+}
+.quiz-controls {
+    margin-top: 1.2em;
+    display: flex;
+    gap: 9px;
+}
+.quiz-nav {
+    background: #f0f3ff;
+    border: none;
+    color: #235;
+    padding: 0.53em 1.1em;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-weight: bold;
+}
+.quiz-nav:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+.result-main-summary {
+    background: #f4fbff;
+    border-radius: 11px;
+    padding: 1em 1.6em 1.1em 1.2em;
+    box-shadow: 0 1px 12px #bbefff22;
+}
+.result-list {
+    list-style: none;
+    padding: 0;
+}
 .footer-fancy {
     text-align: center;
-    padding: 15px;
-    background-color: #f0f0f0;
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 30px;
+    font-size: 1em;
+    padding: 2em 0 1em 0;
+    color: #1876b3;
+    margin-top: 6vw;
+}
+
+/* --- DARK MODE --- */
+body.dark {
+    background: linear-gradient(120deg, #1a2333 0%, #151c26 100%);
+    color: #eaf3ff;
+}
+body.dark .navbar {
+    background: #19243b;
+    color: #ddeaff;
+}
+body.dark .brand-glow {
+    text-shadow: 0 0 8px #292e37, 0 0 1px #4068ff;
+    color: #99c7ff;
+}
+body.dark .navbar a { color: #ddeaff; }
+body.dark .navbar a.active-link, body.dark .navbar a:hover {
+    color: #72cdff;
+    border-bottom: 2px solid #72cdff;
+}
+body.dark .darkmode-btn { color: #ffe080; }
+body.dark .home-svgbox svg { background: #222a3d; }
+body.dark .question-card, body.dark .result-main-summary {
+    background: #232f4a;
+    box-shadow: 0 2px 22px #18336638;
+}
+body.dark .question-title, body.dark .result-main-summary, body.dark .footer-fancy { color: #a2c9ff; }
+body.dark .btn-main {
+    background: linear-gradient(90deg,#11366c,#2562a7);
+    color: #fff;
+}
+body.dark .quiz-nav {
+    background: #283c5d;
+    color: #d4eaff;
+}
+body.dark .result-list li {
+    color: #97cdfa;
+}
+body.dark .footer-fancy {
+    color: #a9d2fd;
+}
+body.dark .question-options label {
+    color: #ddeaff;
+}
+body.dark .big-hero,
+body.dark .brand {
+    color: #c0d8ff;
+}
+body.dark .subtitle {
+    color: #85b0ec;
+}
+body.dark .howto-list,
+body.dark .question-count {
+    color: #5ed7fc;
+}
+body.dark .home-hero,
+body.dark .quiz-hero {
+    background: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: #e4f3fc;
+}
+::-webkit-scrollbar-thumb {
+    background: #c4e1fc;
+    border-radius: 7px;
+}
+body.dark ::-webkit-scrollbar {
+    background: #162236;
+}
+body.dark ::-webkit-scrollbar-thumb {
+    background: #203a54;
+}
+
+@media (max-width: 650px) {
+    .home-main, .quiz-main {
+        padding: 0 2vw;
+    }
+    .home-flex { flex-direction: column-reverse; gap: 0; }
+    .home-svgbox { margin-bottom: 1.2em; }
+    .big-hero { font-size: 1.28em; }
+}
+
+
+
+/* --- Fancy fade in on home --- */
+.animated-fadein { animation: fadeinMove 1.5s; }
+@keyframes fadeinMove {
+    from { opacity:0; transform: translateY(35px);}
+    to { opacity:1; transform: none;}
+}
+
+/* --- Home feature list --- */
+.home-feature-list {
+    margin: 1.6em 0 1.9em 0;
+    padding: 0;
+    list-style: none;
+}
+.home-feature-list li {
+    font-size: 1.11em;
+    color: #27569c;
+    margin-bottom: 0.38em;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+}
+.star {
+    color: #ffe457;
+    font-size: 1.08em;
+    margin-right: 8px;
+    text-shadow: 0 0 7px #e5e8af77;
+}
+
+/* --- Neon-glow button effect --- */
+.neon-glow {
+    box-shadow: 0 0 0 #00b4fc66;
+    animation: neonPulse 1.4s infinite alternate;
+}
+@keyframes neonPulse {
+    from { box-shadow: 0 0 0 #00b4fc66;}
+    to { box-shadow: 0 0 28px #31caff88;}
+}
+
+/* --- Pulse effect on headline --- */
+.pulse {
+    animation: pulse2 1.2s infinite alternate;
+}
+@keyframes pulse2 {
+    0% { text-shadow: 0 0 14px #d8ecff88; }
+    100% { text-shadow: 0 0 26px #a2d4ff; }
 }
