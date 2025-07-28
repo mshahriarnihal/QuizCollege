@@ -267,7 +267,7 @@ Displays score, date, and a detailed summary with color-coded answers (green for
 
 
 
-### Commit #21: Modified final CSS for project 3 (update 4.1) 
+### Commit #22: Modified final CSS for project 3 (update 4.1) 
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 28, ~05:37 p.m.
 
@@ -277,3 +277,33 @@ Displays score, date, and a detailed summary with color-coded answers (green for
 - For the modifications it needed for project 3 was done by Mubasshir Al Shahriar. Here I have added some new classes for the "difficulty-modal" and "difficulty-content."
 
 - Any other changes/modifications that I made previously on this file (update 3.1) were for project 2.
+
+
+
+
+
+
+### Commit #23: Modified final CSS for project 3 (update 4.1) 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~06:02 p.m.
+
+
+- During project 2, I have coded this entire app.js, defining all required logics, actions.
+
+- Now for project 3, I have modified this to meet all requirements and make some more features lively which we planned and worked on
+
+- Added reusable JWT-based authentication (put JWT security in .env file, I am not going to post the .env file to ignore security risk) logic (setToken, getToken, clearAuth, getUsername) to store user session in localStorage.
+
+- Enforced access control: quiz, results, and history pages are now protected; unauthenticated users are redirected to signin.
+Implemented dynamic navbar update showing logged-in user and logout button; logout clears credentials and redirects. As I have defined the logic here, me and my partner Md Akram Hossain both can utilize it on any page wherever it is necessary just by using the function.
+
+- Extended quiz flow to support difficulty, category, and question count selection via modal (with logic to capture and use these on quiz start).
+
+- Updated quiz submission to post selected options and username to backend, supporting category/difficulty leaderboards and analytics.
+
+- Removed quiz backtracking (prevBtn) for answer integrity; I actually made this modification right after adding the sound feedback provided after answer selection.
+
+- Added result sharing via unique result ID, including share-to-clipboard and navigator. Pressing the share button, it will enable the user to get a unique id which will contain their result which using the link with id they can share with friends, social media (I set it in a way so that they can share, but to view the full result, those people will need to sign in, then they can see that friend's result. I did it to maintain result, question-answer's integrity.
+
+- To better understand the modifications, please check the comments inside the code, I tried to explain it nicely.
+
