@@ -162,3 +162,17 @@ questions.json
 
 - Designed a basic icon/logo for the web pages.
 - Added it to html pages of our project.
+
+
+
+### Work for the project 3 starts here.... Some necessary updates and planning: 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~01:01 a.m.
+
+- I have started working on backend, trying to learn basics about MongoDB, Mongoose.
+- I have started working server.js file, which in project 2 was mostly developed by Md Akram Hossain with very little modification by me during the deployment phase.
+- While modifying the server.js to meet requirements of project 3, I am assuming that we will have signup and login pages named as "signup.html" and "signin.html."
+
+**For now, I am expecting Md Akram Hossain to start working on "signin.html," and inside the signin page, please refer to the sign up page's directory as "signin.html", no need to add anything else before it, as we will put these files in same folder when we gather everything together.**
+
+
