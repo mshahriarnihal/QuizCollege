@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Quiz College</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar fancy-navbar">
+    <span class="brand"><span class="brand-glow">Quiz College</span></span>
+    <span>
+      <a href="index.html">Home</a>
+      <a href="signin.html">Sign In</a>
+    </span>
+</nav>
+<div class="quiz-hero">
+    <div class="quiz-main">
+        <h2>Create Your Account</h2>
+        <form id="signupForm">
+            <div>
+                <label>Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn-main">Sign Up</button>
+        </form>
+        <div id="signupMsg" style="margin-top:12px;"></div>
+        <div style="margin-top:10px;">
+            Already have an account? <a href="signin.html">Sign In</a>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('signupForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+        const msg = document.getElementById('signupMsg');
+        msg.textContent = "";
+        try {
+            const res = await fetch('/api/signup', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ username, password })
+            });
+            const data = await res.json();
+            if(res.ok) {
+                msg.style.color = "#12bb67";
+                msg.textContent = "Signup successful! Redirecting to Sign In...";
+                setTimeout(() => { window.location.href = "signin.html"; }, 1400);
+            } else {
+                msg.style.color = "#e94560";
+                msg.textContent = data.error || "Signup failed";
+            }
+        } catch (err) {
+            msg.style.color = "#e94560";
+            msg.textContent = "Signup failed. Server error.";
+        }
+    };
+</script>
+</body>
+</html>
