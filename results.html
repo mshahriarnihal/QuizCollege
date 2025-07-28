@@ -2,31 +2,162 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz Result</title>
+    <title>Quiz Result - Quiz College</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
+
+
 <nav class="navbar fancy-navbar">
     <span class="brand"><span class="brand-glow">Quiz College</span></span>
     <span>
       <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active-link">Home</a>
       <a href="results_history.html">Old Results</a>
+              <a href="profile.html">My Profile</a>
+              <a href="leaderboard.html">Leaderboard</a>
     </span>
 </nav>
 <div class="quiz-hero">
     <div class="quiz-main">
-        <h2 style="margin-bottom:0.5em;">Your Results</h2>
-        <div id="scoreSummary"></div>
-        <button id="playAgainBtn" class="btn-main big-btn" style="margin-top:1.2em;">Play Again</button>
+        <h2>Shared Quiz Result</h2>
+        <div id="resultArea">Loading...</div>
     </div>
 </div>
 <footer class="footer-fancy">
-    &copy; 2025 All right reserved by Md Akram Hossain &amp; Mubasshir Al Shahriar.
+    &copy; 2025 A Md Akram Hossain &amp; Mubasshir Al Shahriar Production.
 </footer>
-<audio id="sound-timer" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b03fa1c8.mp3" preload="auto"></audio>
-<audio id="sound-click" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b03fa1c8.mp3" preload="auto"></audio>
+<script>
+    // Helper to get query params
+    function getParam(nname) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name);
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        const id = getParam('id');
+        const resultArea = document.getElementById('resultArea');
+
+        // --- 1. If there's a shared/public result ID in URL ---
+        if (id) {
+            try {
+                const resp = await fetch(`/api/result/${id}`);
+                if (!resp.ok) {
+                    resultArea.innerHTML = `
+                        <div style="color:#e94560;font-weight:bold;">
+                            <p>Result not found.<br>
+                            The result may have expired, been deleted, or never existed.<br>
+                            Double-check the link or ask your friend to re-share.</p>
+                            <a href="index.html" style="color:#369;">Return to Home</a>
+                        </div>`;
+                    return;
+                }
+                const result = await resp.json();
+                let grade = result.score / result.total;
+                let message = grade === 1
+                    ? "🎉 Perfect! Genius!"
+                    : grade >= 0.8
+                        ? "👏 Great job!"
+                        : grade >= 0.5
+                            ? "👍 Not bad!"
+                            : "😅 Keep practicing!";
+                let detailHtml = (result.summary || []).map((q, i) =>
+                    `<li>
+                        Q${i + 1}: ${q.question}<br>
+                        <span style="color:${q.isCorrect ? '#12bb67' : '#e94560'};">
+                          Your Answer: ${q.yourAnswer || '<i>None</i>'}
+                          ${q.isCorrect ? "✔️" : "❌"}
+                        </span><br>
+                        <span>Correct Answer: ${q.correctAnswer}</span>
+                      </li>`
+                ).join("<br>");
+                resultArea.innerHTML = `
+                    <div class="result-main-summary">
+                        <b>@${result.username || 'Anonymous'}</b>
+                        <h3 style="margin:0;">${message}</h3>
+                        <p style="font-size:1.2em;"><b>Score: ${result.score} / ${result.total}</b></p>
+                        <ul class="result-list">${detailHtml}</ul>
+                        <p><b>Date:</b> ${result.date ? new Date(result.date).toLocaleString() : 'Unknown'}</p>
+                        <a href="index.html" class="btn-main" style="margin-top:12px;display:inline-block;">Home</a>
+                    </div>
+                `;
+            } catch (e) {
+                resultArea.innerHTML = '<p>Error loading result. Please try again later.</p>';
+            }
+        } else {
+            // --- 2. Personal/local result view (after finishing a quiz) ---
+            const result = JSON.parse(localStorage.getItem('quizResult') || "{}");
+            if (!result || !result.summary || !Array.isArray(result.summary)) {
+                resultArea.innerHTML = "<p>Oops! No results to show.</p>";
+                return;
+            }
+            let grade = result.score / result.total;
+            let message = grade === 1
+                ? "🎉 Perfect! Genius!"
+                : grade >= 0.8
+                    ? "👏 Great job!"
+                    : grade >= 0.5
+                        ? "👍 Not bad!"
+                        : "😅 Keep practicing!";
+            let detailHtml = result.summary.map((q, i) =>
+                `<li>
+                    Q${i + 1}: ${q.question}<br>
+                    <span style="color:${q.isCorrect ? '#12bb67' : '#e94560'};">
+                      Your Answer: ${q.yourAnswer || '<i>None</i>'}
+                      ${q.isCorrect ? "✔️" : "❌"}
+                    </span><br>
+                    <span>Correct Answer: ${q.correctAnswer}</span>
+                  </li>`
+            ).join("<br>");
+            resultArea.innerHTML = `
+                <div class="result-main-summary">
+                    <h3 style="margin:0;">${message}</h3>
+                    <p style="font-size:1.2em;"><b>Score: ${result.score} / ${result.total}</b></p>
+                    <ul class="result-list">${detailHtml}</ul>
+                    <button id="shareBtn" class="btn-main" style="margin-top: 15px;">Share My Score</button>
+                    <input type="text" id="shareLink" style="width:80%;margin:15px 0;display:none;" readonly>
+                    <button id="playAgainBtn" class="btn-main" style="margin-top: 8px;">Play Again</button>
+                </div>
+            `;
+            // Share button logic (Web Share API + fallback)
+            if (result.resultId) {
+                const shareBtn = document.getElementById('shareBtn');
+                const shareLink = document.getElementById('shareLink');
+                const url = `${window.location.origin}/results.html?id=${result.resultId}`;
+                if (navigator.share) {
+                    shareBtn.onclick = () => {
+                        navigator.share({
+                            title: "Quiz College - My Quiz Result",
+                            text: "Check out my quiz score!",
+                            url: url
+                        }).catch(() => {
+                            // fallback: copy to clipboard
+                            shareLink.style.display = "block";
+                            shareLink.value = url;
+                            shareLink.select();
+                            document.execCommand("copy");
+                            shareBtn.textContent = "Link Copied!";
+                            setTimeout(() => shareBtn.textContent = "Share My Score", 2000);
+                        });
+                    };
+                } else {
+                    shareBtn.onclick = () => {
+                        shareLink.style.display = "block";
+                        shareLink.value = url;
+                        shareLink.select();
+                        document.execCommand("copy");
+                        shareBtn.textContent = "Link Copied!";
+                        setTimeout(() => shareBtn.textContent = "Share My Score", 2000);
+                    };
+                }
+            }
+            document.getElementById("playAgainBtn").onclick = function () {
+                window.location.href = "index.html";
+            };
+        }
+    });
+</script>
 <script src="app.js"></script>
 </body>
 </html>
