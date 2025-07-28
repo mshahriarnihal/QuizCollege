@@ -219,11 +219,11 @@ Sorts results by date (oldest first) and generates HTML for each attempt.
 Displays score, date, and a detailed summary with color-coded answers (green for correct, red for incorrect).
 
 
-### Commit #19: PRofile page 
+### Commit #19: Profile page 
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 28, ~05:03 p.m.
 
-- I have kept it protected too so that it is accessible when user is logged in (checks for token in localStorage, redirects to signin otherwise).
+- I have kept it protected too so that it is accessible when user is logged in (checks for token in localStorage, redirects to signin otherwise). The main logic part of this you can find inside app.js, I have developed it there and instructed Md Akram Hossain to utilize it in the pages he was working (if he thinks it is needed for those pages).
 - It fetches user quiz history and stats from backend (/api/user-history) using the stored username.
 - Also, displays a welcome/greeting, then shows an overview of the specific player like highest score, total quiz attempts, and then showed the chronological list of all quiz attempts (with date and score).
 - I kept the "Start New Quiz" button to make navigation easier.
@@ -231,3 +231,12 @@ Displays score, date, and a detailed summary with color-coded answers (green for
 
 
 
+### Commit #20: index.html mofidication for project 3 (Full and Final version, update 4.1.0) 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~05:14 p.m.
+
+- Adding new pages which we had to create additionally for project #3 (merged version)
+
+- Updating information about the features as we have added some new features for the new update (Project 3)
+
+- This should be the final version of index.html (home page) of our project's final version (Project 3).
