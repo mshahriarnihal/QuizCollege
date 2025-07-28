@@ -198,9 +198,25 @@ questions.json
 - I have finished working on the LeaderBoard page front end.
 - Expecting Partner for to finish backend logic part for the LeadeBoard page.so it can count the percentage instead of direct scores
 
-### Commit #17: LeaderBoard 
+### Commit #17: Result and Results history page
 **Author**: Akram Hossain  
 **Date, Time**: July 28, ~4.11 p.m.
 Shared Result View: Displays a public quiz result fetched from the server using a unique result ID passed via URL query parameter (?id=).Personal Result View: Shows the user's recent quiz result stored in localStorage after completing a quiz.
 Fetches and displays shared quiz results from the server using /api/result/{id}.Shows personal quiz results from localStorage.this is the modified version of the older 1
+
+
+### Commit #17: Results history page
+**Author**: Akram Hossain  
+**Date, Time**: July 28, ~5.11 p.m.
+Authentication:
+#1. Checks for a token in localStorage and redirects to signin.html if absent.
+Includes a redundant check at the top of the page to ensure reliability, as the app.js version was unreliable in some cases.
+#2. API Fetch:
+Fetches user history from /api/user-history?username=<username>.
+Handles errors (e.g., network issues or no results) with user-friendly messages.
+#3. Result Rendering:
+Sorts results by date (oldest first) and generates HTML for each attempt.
+Displays score, date, and a detailed summary with color-coded answers (green for correct, red for incorrect).
+
+
 
