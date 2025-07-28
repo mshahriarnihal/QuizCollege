@@ -240,3 +240,28 @@ Displays score, date, and a detailed summary with color-coded answers (green for
 - Updating information about the features as we have added some new features for the new update (Project 3)
 
 - This should be the final version of index.html (home page) of our project's final version (Project 3).
+
+
+
+### Commit #21: quiz.html mofidication for project 3 (Full and Final version, update 3.1.1) 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~05:25 p.m.
+
+- I have modified and further enhanced quiz.html with user-customizable quiz options using Trivia API considering the requirements and options for project 3
+
+- When I worked on project 2, I worked on this entire section, but it was so plain and straight used to load questions from question.json file. Now, as we are switching to Trivia API to load questions, I followed my instructors suggestions to make the game more interesting.
+
+- Implemented a modal dialog (triggered on page load) allowing users to select quiz difficulty, category, and number of questions before starting the quiz.
+
+- It dynamically fetches and populates available trivia categories from the Open Trivia DB API using JavaScript (fetch call in DOMContentLoaded).
+
+- Difficulty selection is mapped to age ranges (easy: <13, medium: 13-19, hard: >19) to promote balanced competition and appropriate question sets.
+
+- Users can set number of questions (5–50) for a personalized quiz length (Ofc thanks to Trivia API), and also to the instructor for suggesting and introducing it.
+
+- All selections are passed to the backend to generate quizzes accordingly.
+
+- I have now mad it completely integrated with existing quiz flow, navigation controls, dark mode toggle, and audio feedback (correct/wrong sounds).
+
+- I believe it Improves user experience and fairness, making the leaderboard more meaningful across different age groups. As I worked with this Trivia API, I instructed my partner to modify and update the leaderboard.html page according to this as he was working on that part
+
