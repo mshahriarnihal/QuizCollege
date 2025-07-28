@@ -269,7 +269,7 @@ Displays score, date, and a detailed summary with color-coded answers (green for
 
 ### Commit #21: Modified final CSS for project 3 (update 4.1) 
 **Author**: Mubasshir Al Shahriar  
-**Date, Time**: July 28, ~05:25 p.m.
+**Date, Time**: July 28, ~05:37 p.m.
 
 
 - This last modification of our CSS file is made by Mubasshir Al Shahriar, although the main file was initially designed by Md Akram Hossain with some small contributions and later modifications by Mubasshir Al Shahriar.
