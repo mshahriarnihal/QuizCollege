@@ -180,7 +180,7 @@ questions.json
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 28, ~07:35 a.m.
 
-- I have finished working on the signup page front end.
+- I have finished working on the signup page front end, also wrote logics, fetch, to make it work soon.
 - I have also finished working on backend to do the authentication with both sign up and sign in, assuming that Md Akram Hossain will complete and upload a page named "signing.html". I have set up the server.js assuming it.
 - I have also connected the mongo db, currently trying to upload each user's data to mongo db. For that reason, I am not pushing the updated server.js right now as it needs more works. I will push final server.js once everything is finalized.
 
@@ -217,6 +217,17 @@ Handles errors (e.g., network issues or no results) with user-friendly messages.
 #3. Result Rendering:
 Sorts results by date (oldest first) and generates HTML for each attempt.
 Displays score, date, and a detailed summary with color-coded answers (green for correct, red for incorrect).
+
+
+### Commit #19: PRofile page 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~05:03 p.m.
+
+- I have kept it protected too so that it is accessible when user is logged in (checks for token in localStorage, redirects to signin otherwise).
+- It fetches user quiz history and stats from backend (/api/user-history) using the stored username.
+- Also, displays a welcome/greeting, then shows an overview of the specific player like highest score, total quiz attempts, and then showed the chronological list of all quiz attempts (with date and score).
+- I kept the "Start New Quiz" button to make navigation easier.
+- Also defined how to handle error by showing error messages if unable to load history.
 
 
 
