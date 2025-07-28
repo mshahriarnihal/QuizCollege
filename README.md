@@ -329,3 +329,24 @@ Implemented dynamic navbar update showing logged-in user and logout button; logo
 
 
 
+### Commit #26: server.js updated version for Project 3 (update 3.1)
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~07:16 p.m.
+
+Until project 2, Md Akram Hossain worked on this server.js. But after starting project 3, as I (Mubasshir) did the MongoDB setup and took care of the app.js too, it was more convenient and efficient to take charge of this server setup part by myself considering the limited time we have. So, I made necessary modification for this project 3 version of server.js. In this update 3.1, I am bringing following modifications:
+
+- Implemented JWT-based authentication for user signup/signin; and also protected sensitive API routes.
+
+- Enhanced /api/start-quiz further by making it accept and process difficulty, category, and amount query params, supporting custom quiz generation from both local DB and Open Trivia DB API.
+
+- Modified /api/submit-quiz to keep record of quiz attempts with difficulty, category, and amount in both User and QuizResult collections.
+
+- Added /api/user-history and /api/leaderboard endpoints for fetching filtered quiz stats by user, category, and difficulty.
+
+- These are the main things I did as new update for the project 3 version of server.
+- As I had to make changes very often in app.js and server.js, I am pushing the final update of these 2 file almost after finalizing all other files.
+
+
+
+
+
