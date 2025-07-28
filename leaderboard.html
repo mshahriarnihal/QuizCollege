@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+<nav class="navbar fancy-navbar">
+    <span class="brand"><span class="brand-glow">Quiz College</span></span>
+    <span>
+      <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="index.html">Home</a>
+      <a href="results_history.html">Old Results</a>
+      <a href="profile.html">My Profile</a>
+      <a href="leaderboard.html" class="active-link">Leaderboard</a>
+    </span>
+</nav>
+<div class="quiz-hero">
+    <div class="quiz-main">
+        <h2>Leaderboard: Top 10 Quiz Attempts</h2>
+        <div id="leaderboardArea"></div>
+    </div>
+</div>
+<footer class="footer-fancy">
+    &copy; 2025 A Md Akram Hossain &amp; Mubasshir Al Shahriar Production.
+</footer>
+<script>
+    if (!localStorage.getItem('token')) {
+        window.location.href = "signin.html";
+    }
+
+    // Fetch leaderboard data (now sorted by percentage score)
+    document.addEventListener("DOMContentLoaded", async () => {
+        try {
+            const resp = await fetch('/api/leaderboard');
+            const data = await resp.json();
+            if (!data.top || data.top.length === 0) {
+                document.getElementById("leaderboardArea").innerHTML = "<p>No scores to show yet.</p>";
+            } else {
+                // Show score as percent, and also show difficulty/category/amount if available
+                document.getElementById("leaderboardArea").innerHTML =
+                    `<ol style="font-size:1.12em;">` +
+                    data.top.map((entry, idx) => {
+                        const percent = entry.total > 0 ? ((entry.score / entry.total) * 100).toFixed(1) : '0.0';
+                        // Optional fields: difficulty, category, amount
+                        const diff = entry.difficulty ? ` | <b>Difficulty:</b> ${entry.difficulty}` : '';
+                        const cat = entry.category ? ` | <b>Category:</b> ${entry.category}` : '';
+                        const amt = entry.amount ? ` | <b>Qns:</b> ${entry.amount}` : '';
+                        return `<li>
+                            <b>${entry.username}</b>
+                            &mdash; <b>${percent}%</b> (<b>${entry.score} / ${entry.total}</b>)
+                            <span style="color: #778;"> (on ${new Date(entry.date).toLocaleString()})</span>
+                            ${diff}${cat}${amt}
+                        </li>`;
+                    }).join("") +
+                    `</ol>`;
+
+                if (data.myRank !== undefined && data.myRank !== null) {
+                    document.getElementById("leaderboardArea").innerHTML +=
+                        `<hr><p style="font-size:1.08em;">
+                        Your best appearance on leaderboard: <b>#${data.myRank+1}</b>
+                      </p>`;
+                }
+            }
+        } catch (err) {
+            document.getElementById("leaderboardArea").innerHTML = "<p>Error loading leaderboard.</p>";
+        }
+    });
+</script>
+<script src="app.js"></script>  <!--This should adjust navbar and other settings to how Mubasshir has set-->
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+/*Developed by Md Akram Hossain */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In - Quiz College</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar fancy-navbar">
+    <span class="brand"><span class="brand-glow">Quiz College</span></span>
+    <span>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Sign Up</a>
+    </span>
+</nav>
+<div class="quiz-hero">
+    <div class="quiz-main">
+        <h2>SignIn to Your Account</h2>
+        <form id="signinForm">
+            <div>
+                <label>Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn-main">Sign In</button>
+        </form>
+        <div id="signinMsg" style="margin-top:12px;"></div>
+        <div style="margin-top:10px;">
+            New user? <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('signinForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+        const msg = document.getElementById('signinMsg');
+        msg.textContent = "";
+        try {
+            const res = await fetch('/api/signin', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ username, password })
+            });
+            const data = await res.json();
+            if(res.ok) {
+                msg.style.color = "#12bb67";
+                msg.textContent = "Login successful! Redirecting to Home...";
+                // Store JWT and username in localStorage for now (for authentication)
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("username", data.username);
+                setTimeout(() => { window.location.href = "index.html"; }, 1400);
+            } else {
+                msg.style.color = "#e94560";
+                msg.textContent = data.error || "Sign in failed";
+            }
+        } catch (err) {
+            msg.style.color = "#e94560";
+            msg.textContent = "Sign in failed. Server error.";
+        }
+    };
+</script>
+</body>
+</html>
