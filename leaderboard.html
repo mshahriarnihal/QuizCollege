@@ -1,3 +1,5 @@
+<!--Main author of this page is Md Akram Hossain. But as it was looking very basic, on top of all the codes my partner wrote, I (Mubasshir) am adding some modification to make the leaderboard/table look little more enhanced/fancy. To make it actually work, next I am adding some additional class to the CSS section (on styles.css) too. Not sure if it's gonna work 100% atm, feel free to revert it back or make any additional changes. Modification date,time: July 28 : Around 7: 45 p.m-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +21,13 @@
 </nav>
 <div class="quiz-hero">
     <div class="quiz-main">
-        <h2>Leaderboard: Top 10 Quiz Attempts</h2>
-        <div id="leaderboardArea"></div>
+        <div class="leaderboard-glass">
+            <h2 class="leaderboard-title">
+                <span style="font-size:2.4em;vertical-align:middle;">🏆</span>
+                Leaderboard: Top 10 Quiz Attempts
+            </h2>
+            <div id="leaderboardFancyList"></div>
+        </div>
     </div>
 </div>
 <footer class="footer-fancy">
@@ -31,45 +38,52 @@
         window.location.href = "signin.html";
     }
 
-    // Fetch leaderboard data (now sorted by percentage score)
     document.addEventListener("DOMContentLoaded", async () => {
         try {
             const resp = await fetch('/api/leaderboard');
             const data = await resp.json();
+            const container = document.getElementById("leaderboardFancyList");
             if (!data.top || data.top.length === 0) {
-                document.getElementById("leaderboardArea").innerHTML = "<p>No scores to show yet.</p>";
+                container.innerHTML = "<p>No scores to show yet.</p>";
             } else {
-                // Show score as percent, and also show difficulty/category/amount if available
-                document.getElementById("leaderboardArea").innerHTML =
-                    `<ol style="font-size:1.12em;">` +
+                container.innerHTML =
+                    `<ol class="fancy-leaderboard-list">` +
                     data.top.map((entry, idx) => {
+                        // Adding animated looking medals for top 3 (actually just using emoji with little effect)
+                        let medal = "";
+                        if (idx === 0) medal = `<span class="leader-medal gold">🥇</span>`;
+                        else if (idx === 1) medal = `<span class="leader-medal silver">🥈</span>`;
+                        else if (idx === 2) medal = `<span class="leader-medal bronze">🥉</span>`;
+                        // Modifying here for the percentage
                         const percent = entry.total > 0 ? ((entry.score / entry.total) * 100).toFixed(1) : '0.0';
-                        // Optional fields: difficulty, category, amount
-                        const diff = entry.difficulty ? ` | <b>Difficulty:</b> ${entry.difficulty}` : '';
-                        const cat = entry.category ? ` | <b>Category:</b> ${entry.category}` : '';
-                        const amt = entry.amount ? ` | <b>Qns:</b> ${entry.amount}` : '';
-                        return `<li>
-                            <b>${entry.username}</b>
-                            &mdash; <b>${percent}%</b> (<b>${entry.score} / ${entry.total}</b>)
-                            <span style="color: #778;"> (on ${new Date(entry.date).toLocaleString()})</span>
+                        const percentClass = idx === 0 ? "first-place" : idx === 1 ? "second-place" : idx === 2 ? "third-place" : "";
+                        const diff = entry.difficulty ? `<span class="lb-pill">${entry.difficulty}</span>` : '';
+                        const cat = entry.category ? `<span class="lb-pill cat">${entry.category}</span>` : '';
+                        const amt = entry.amount ? `<span class="lb-pill amt">${entry.amount} Qns</span>` : '';
+                        return `<li class="fancy-lb-row ${percentClass}">
+                            <span class="leader-index">${medal || (idx+1)}</span>
+                            <span class="lb-username">${entry.username}</span>
+                            <span class="lb-percent">${percent}%</span>
+                            <span class="lb-score">(${entry.score} / ${entry.total})</span>
+                            <span class="lb-date">${new Date(entry.date).toLocaleString()}</span>
                             ${diff}${cat}${amt}
                         </li>`;
                     }).join("") +
                     `</ol>`;
-
                 if (data.myRank !== undefined && data.myRank !== null) {
-                    document.getElementById("leaderboardArea").innerHTML +=
-                        `<hr><p style="font-size:1.08em;">
-                        Your best appearance on leaderboard: <b>#${data.myRank+1}</b>
-                      </p>`;
+                    container.innerHTML +=
+                        `<hr style="border:0;height:1.5px;background:linear-gradient(90deg,#6366f1,#e94560,#5434fa);margin:18px 0;">
+                        <div class="your-rank-glass">
+                            <span>Your best appearance on leaderboard:</span>
+                            <span class="your-rank-badge">#${data.myRank+1}</span>
+                        </div>`;
                 }
             }
         } catch (err) {
-            document.getElementById("leaderboardArea").innerHTML = "<p>Error loading leaderboard.</p>";
+            document.getElementById("leaderboardFancyList").innerHTML = "<p>Error loading leaderboard.</p>";
         }
     });
 </script>
-<script src="app.js"></script>  <!--This should adjust navbar and other settings to how Mubasshir has set-->
-
+<script src="app.js"></script>
 </body>
 </html>
