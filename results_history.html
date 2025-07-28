@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <title>Old Quiz Results</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
+
+
+<script>
+    // Redireect to signin if not loggeed in, manually putting it here as the one in app.js was not working properly on this page or maybe my browser was caching old data. Hpwever, this script should provide extra protection.
+    if (!localStorage.getItem('token')) {
+        window.location.href = "signin.html";
+    }
+</script>
+
 <nav class="navbar fancy-navbar">
     <span class="brand"><span class="brand-glow">Quiz College</span></span>
     <span>
       <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
-      <a href="index.html">Home</a>
-      <a href="results_history.html" class="active-link">Old Results</a>
+      <a href="index.html" class="active-link">Home</a>
+      <a href="results_history.html">Old Results</a>
+              <a href="profile.html">My Profile</a>
+              <a href="leaderboard.html">Leaderboard</a>
     </span>
 </nav>
 <div class="quiz-hero">
@@ -24,9 +35,14 @@
 <footer class="footer-fancy">
     &copy; 2025 A Md Akram Hossain & Mubasshir Al Shahriar Production.
 </footer>
-<audio id="sound-timer" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b03fa1c8.mp3" preload="auto"></audio>
-<audio id="sound-click" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b03fa1c8.mp3" preload="auto"></audio>
+
+<!--Modifying the script, it won't loaad from local machine browser cookie anymore -->
 <script>
+    // Redirect to signin if not logged in
+    if (!localStorage.getItem('token')) {
+        window.location.href = "signin.html";
+    }
+
     function applyDarkMode(state) {
         if(state === "dark") document.body.classList.add("dark");
         else document.body.classList.remove("dark");
@@ -39,7 +55,7 @@
         let mode = document.body.classList.contains("dark") ? "light" : "dark";
         applyDarkMode(mode);
     }
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => {
         let theme = localStorage.getItem("theme");
         if(!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             theme = "dark";
@@ -48,30 +64,50 @@
         if(document.getElementById('darkModeToggle')) {
             document.getElementById('darkModeToggle').onclick = toggleDarkMode;
         }
-        // Results listing
-        let history = JSON.parse(localStorage.getItem('quizHistory') || "[]");
+
+        // --- Load user results from BACkKEND (not from localStorage!) ---
+        const username = localStorage.getItem('username');
         let area = document.getElementById('historyArea');
-        if(!history.length) {
-            area.innerHTML = "<p>No past results found.</p>";
-        } else {
-            area.innerHTML = history.reverse().map((r, idx) => `
-          <div class="question-card" style="margin-bottom:18px;">
-            <b>Quiz #${history.length-idx}</b><br>
-            <b>Score:</b> ${r.score} / ${r.total}
-            <ul style="margin-top:7px;">
-            ${r.summary.map((q,i) => `
-              <li>
-                Q${i+1}: ${q.question}
-                <span style="color:${q.isCorrect?'#12bb67':'#e94560'};">
-                  (${q.isCorrect ? "✔️" : "❌"})
-                </span>
-              </li>
-            `).join("")}
-            </ul>
-          </div>
-        `).join("");
+        if (!username) {
+            area.innerHTML = "<p>Not logged in.</p>";
+            return;
+        }
+
+        try {
+            const resp = await fetch(`/api/user-history?username=${encodeURIComponent(username)}`);
+            const data = await resp.json();
+            if (!resp.ok || !data.scores || !data.scores.length) {
+                area.innerHTML = "<p>No past results found in your account.</p>";
+                return;
+            }
+            // Rewnder attempts: newest first
+            // Reverse so oldwest comes first (Quiz #1 is oldest)
+            const scoresInOrder = data.scores.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+            area.innerHTML = scoresInOrder.map((attempt, idx) => `
+    <div class="question-card" style="margin-bottom:18px;">
+        <b>Quiz #${idx + 1}</b><br>
+        <b>Score:</b> ${attempt.score} / ${attempt.total} <br>
+        <span style="font-size:0.9em;">${new Date(attempt.date).toLocaleString()}</span>
+        <ul style="margin-top:7px;">
+            ${(attempt.summary || []).map((q, i) => `
+                <li>
+                    Q${i+1}: ${q.question}<br>
+                    <span>Your Answer: <b style="color:${q.isCorrect?'#12bb67':'#e94560'};">${q.yourAnswer || '<i>None</i>'}</b>
+                    ${q.isCorrect ? "✔️" : "❌"}
+                    </span><br>
+                    <span>Correct: <b>${q.correctAnswer}</b></span>
+                </li>
+            `).join('')}
+        </ul>
+    </div>
+`).join("");
+
+        } catch (e) {
+            area.innerHTML = "<p>Error loading your quiz results.</p>";
         }
     });
 </script>
+<script src="app.js"></script>
+
 </body>
 </html>
