@@ -320,3 +320,12 @@ Implemented dynamic navbar update showing logged-in user and logout button; logo
 - These changes are very much helpful to support new Project 3 features such as difficulty/category leaderboards and personalized profile statistics.
 
 
+
+### Commit #25: QuizResult.js Schema for Project 3 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~06:32 p.m.
+
+- Here I am adding difficulty, category, and amount fields to each quiz result for keeping track. Maybe I could do it using only User.js, but I was having some trouble and later fixed it with this additional file. Through this file, I am also setting defaults for all new fields to ensure compatibility with legacy records.
+
+
+
