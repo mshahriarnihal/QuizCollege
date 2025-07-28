@@ -265,3 +265,15 @@ Displays score, date, and a detailed summary with color-coded answers (green for
 
 - I believe it Improves user experience and fairness, making the leaderboard more meaningful across different age groups. As I worked with this Trivia API, I instructed my partner to modify and update the leaderboard.html page according to this as he was working on that part
 
+
+
+### Commit #21: Modified final CSS for project 3 (update 4.1) 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~05:25 p.m.
+
+
+- This last modification of our CSS file is made by Mubasshir Al Shahriar, although the main file was initially designed by Md Akram Hossain with some small contributions and later modifications by Mubasshir Al Shahriar.
+
+- For the modifications it needed for project 3 was done by Mubasshir Al Shahriar. Here I have added some new classes for the "difficulty-modal" and "difficulty-content."
+
+- Any other changes/modifications that I made previously on this file (update 3.1) were for project 2.
