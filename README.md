@@ -176,3 +176,11 @@ questions.json
 **For now, I am expecting Md Akram Hossain to start working on "signin.html," and inside the signin page, please refer to the sign up page's directory as "signin.html", no need to add anything else before it, as we will put these files in same folder when we gather everything together.**
 
 
+### Commit #14: Signup Page 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~07:35 a.m.
+
+- I have finished working on the signup page front end.
+- I have also finished working on backend to do the authentication with both sign up and sign in, assuming that Md Akram Hossain will complete and upload a page named "signing.html". I have set up the server.js assuming it.
+- I have also connected the mongo db, currently trying to upload each user's data to mongo db. For that reason, I am not pushing the updated server.js right now as it needs more works. I will push final server.js once everything is finalized.
+
