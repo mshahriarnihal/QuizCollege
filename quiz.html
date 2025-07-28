@@ -7,15 +7,46 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
+
+<!--Modification by Mubasshir for project 3: Adding difficulty, category, and number of questions selection feature as we can play with these using Trivia API-->
+<!-- Difficulty/Category Selection Modal -->
+<div id="difficultyModal" class="difficulty-modal">
+    <div class="difficulty-content">
+        <h2>Select Difficulty</h2>
+        <div style="font-size: 0.97em; color: #444; margin: 0 0 1.2em 0; line-height:1.42; text-align:center;">
+            We made this option to make sure people get difficulty in this quiz according to their age range. Because, we can't just test a child and an adult with questions of the same difficulty and compete on the same leaderboard. That's why we have brought this difficulty level. With it, the leaderboard will become more balanced. Please choose difficulty level based on your age range and get tested.
+        </div>
+        <!-- Difficulty Selection -->
+        <div style="margin-bottom:0.9em;">
+            <select id="difficultySelect">
+                <option value="easy">Easy [Age: &lt; 13] </option>
+                <option value="medium" selected>Medium [Age: 13-19] </option>
+                <option value="hard">Hard [Age: above 19] </option>
+            </select>
+        </div>
+        <!-- Category Selection (to be populated by JS) -->
+        <div style="margin-bottom:0.9em;">
+            <select id="categorySelect">
+                <option value="">Loading categories...</option>
+            </select>
+        </div>
+        <!-- Number of Questions -->
+        <div style="margin-bottom:1.1em;">
+            <input type="number" id="numQuestionsInput" min="5" max="50" value="10" style="width:80px; padding:3px 7px; font-size:1em; border-radius:6px; border:1px solid #b8b8b8;">
+            <span style="font-size:0.97em;">Number of Questions (5-50)</span>
+        </div>
+        <button id="difficultyBtn" class="btn-main" style="margin-left:10px;">Start Quiz</button>
+    </div>
+</div>
+
 <nav class="navbar fancy-navbar">
-
-
-
     <span class="brand"><span class="brand-glow">Quiz College</span></span>
     <span>
       <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active-link">Home</a>
       <a href="results_history.html">Old Results</a>
+      <a href="profile.html">My Profile</a>
+      <a href="leaderboard.html">Leaderboard</a>
     </span>
 </nav>
 <div class="quiz-hero">
@@ -38,6 +69,23 @@
 <script src="app.js"></script>
 <audio id="sound-correct" src="sounds/correct.mp3" preload="auto"></audio>
 <audio id="sound-wrong" src="sounds/wrong.mp3" preload="auto"></audio>
+<script>
+    /* Here I am making necessary modifications to populate categories dynamically */
+    document.addEventListener("DOMContentLoaded", async () => {
+        const catSel = document.getElementById('categorySelect');
+        if (!catSel) return;
+        try {
+            const resp = await fetch("https://opentdb.com/api_category.php");
+            const data = await resp.json();
+            catSel.innerHTML = '<option value="">Any Category</option>' +
+                data.trivia_categories.map(c =>
+                    `<option value="${c.id}">${c.name}</option>`
+                ).join('');
+        } catch (e) {
+            catSel.innerHTML = '<option value="">Any Category</option>';
+        }
+    });
+</script>
 
 </body>
 </html>
