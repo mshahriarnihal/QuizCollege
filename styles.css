@@ -1,4 +1,5 @@
-/* This is the enhanced and most up to date version of our CSS file. Designed mostly by Md Akram Hossain. Mubasshir Al Shahriar is making some adjustment, addition, and slight modifications. */
+/* This is the enhanced and most up to date version of our CSS file. For project 2, it was designed mostly by Md Akram Hossain. Mubasshir Al Shahriar made some adjustment, addition, and slight modifications. */
+/* For project 3, Mubasshir Al Shahriar has made all required modifications necessary for project 3 on top of what it was during the submission of project 2. */
 
 /* designed by Akram and trusted by Mubasshir */
 
@@ -370,4 +371,29 @@ body.dark ::-webkit-scrollbar-thumb {
 @keyframes pulse2 {
     0% { text-shadow: 0 0 14px #d8ecff88; }
     100% { text-shadow: 0 0 26px #a2d4ff; }
+}
+
+
+/*Modification by Mubasshir to add the difficulty level feature for project 3*/
+/*Using this same section of CSS, in quiz.html I am going add queestion category, how many questions user would choose those stuffs' drop down option. */
+
+.difficulty-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.difficulty-content {
+    background: #fff;
+    border-radius: 1em;
+    padding: 2em 3em;
+    box-shadow: 0 4px 24px #8882;
+    text-align: center;
+}
+body.dark .difficulty-content {
+    background: #191932;
+    color: #fff;
 }
