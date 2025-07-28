@@ -348,5 +348,15 @@ Until project 2, Md Akram Hossain worked on this server.js. But after starting p
 
 
 
+### Commit #27: Further enhancing leaderboard.html page's look & further addition in CSS
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~07:49 p.m.
+
+- Original author of leaderboard.html page is Md Akram Hossain. But as it was looking very basic, on top of all the codes my partner wrote, I (Mubasshir) am adding some modification to make the leaderboard/table look little more enhanced/fancy. 
+
+- To make it actually work, I have also added some additional class to the end of the CSS file (for ex: "leaderboard-glass," "@Keyframes leaderboard-fadein," ".fancy-leaderboard-list" etc).
+
+- Next, I am going to wrap everything up, write an overview for the final (mergerd project 2 + project 3) project, re-deploy on heroku and add the ip address of the heroku app to MongoDB.
+
 
 
