@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Quiz Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+<nav class="navbar fancy-navbar">
+    <span class="brand"><span class="brand-glow">Quiz College</span></span>
+    <span>
+      <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
+      <a href="index.html" class="active-link">Home</a>
+      <a href="results_history.html">Old Results</a>
+              <a href="profile.html">My Profile</a>
+              <a href="leaderboard.html">Leaderboard</a>
+    </span>
+</nav>
+<div class="quiz-hero">
+    <div class="quiz-main">
+        <div id="userGreeting"></div>
+        <div style="margin:18px 0;">
+            <button id="startQuizBtn" class="btn-main">Start New Quiz</button>
+        </div>
+        <div id="profileStats"></div>
+        <h2 style="margin-top:30px;">Your Quiz History</h2>
+        <div id="historyList"></div>
+    </div>
+</div>
+<footer class="footer-fancy">
+    &copy; 2025 A Md Akram Hossain &amp; Mubasshir Al Shahriar Production.
+</footer>
+<script src="app.js"></script>
+<script>
+/* Making sure it appears to only logged in users. */
+    if (!localStorage.getItem('token')) {
+        window.location.href = "signin.html";
+    }
+
+    document.getElementById('startQuizBtn').onclick = function() {
+        window.location.href = "quiz.html";
+    };
+
+    // Fetching and showing user's history from our MongoDB
+    document.addEventListener("DOMContentLoaded", async () => {
+        const username = localStorage.getItem("username");
+        if (!username) {
+            document.getElementById("userGreeting").innerHTML = "<p>You must be logged in to view your profile.</p>";
+            return;
+        }
+        document.getElementById("userGreeting").innerHTML = `<h2>Welcome, <span style="color:#5434fa">${username}</span>!</h2>`;
+        try {
+            const resp = await fetch(`/api/user-history?username=${encodeURIComponent(username)}`);
+            const data = await resp.json();
+            if (!data.scores || data.scores.length === 0) {
+                document.getElementById("profileStats").innerHTML = `<br><h3><b>Your highest score till now:</b> 0 / 10<br><br><b>Total attempts:</b> 0</h3>`;
+                document.getElementById("historyList").innerHTML = "<p>No history found yet.</p>";
+            } else {
+               /* Sort which fits better*/
+                const scoresInOrder = data.scores.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+                const highestScore = Math.max(...scoresInOrder.map(s => s.score || 0));
+                document.getElementById("profileStats").innerHTML = `<br><h3>
+                    <b>Your highest score till now:</b> ${highestScore} / 10<br><br>
+                    <b>Total attempts:</b> ${scoresInOrder.length}
+                </h3>`;
+                document.getElementById("historyList").innerHTML = scoresInOrder.map((s, idx) => `
+                  <div class="question-card" style="margin-bottom:18px;">
+                    <b>Attempt #${idx + 1}</b><br>
+                    <b>Score:</b> ${s.score} / ${s.total}<br>
+                    <span>Date: ${new Date(s.date).toLocaleString()}</span>
+                  </div>
+                `).join("");
+            }
+        } catch (err) {
+            document.getElementById("historyList").innerHTML = "<p>Error loading history.</p>";
+        }
+    });
+</script>
+</body>
+</html>
