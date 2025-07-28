@@ -184,3 +184,10 @@ questions.json
 - I have also finished working on backend to do the authentication with both sign up and sign in, assuming that Md Akram Hossain will complete and upload a page named "signing.html". I have set up the server.js assuming it.
 - I have also connected the mongo db, currently trying to upload each user's data to mongo db. For that reason, I am not pushing the updated server.js right now as it needs more works. I will push final server.js once everything is finalized.
 
+### Commit #14: SignIn Page 
+**Author**: Akram Hossain  
+**Date, Time**: July 28, ~3:35 p.m.
+
+- I have finished working on the SignIN page front end.
+- Expecting Partner for to finish backend part for the signin page.
+
