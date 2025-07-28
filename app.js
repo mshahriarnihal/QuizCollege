@@ -162,7 +162,7 @@ if (window.location.pathname.endsWith("quiz.html")) {
     let questions = [];
     let answers = [];
     let current = 0;
-    let timer = 120;
+    let timer = 240;
     let interval = null;
     let selectedDifficulty = null;
     let selectedCategory = null;
