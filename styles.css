@@ -394,6 +394,167 @@ body.dark ::-webkit-scrollbar-thumb {
     text-align: center;
 }
 body.dark .difficulty-content {
-    background: #191932;
+    backgroucnd: #191932;
     color: #fff;
+}
+
+
+/* More addition for the project 3 version of CSS by Mubasshir to make leaderboard page better */
+.leaderboard-glass {
+    max-width: 560px;
+    margin: 45px auto 0 auto;
+    padding: 30px 28px 24px 28px;
+    background: rgba(255,255,255,0.13);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px 0 rgba(80,0,120,0.21), 0 1.5px 10px 0 #bbaaff99;
+    backdrop-filter: blur(9px);
+    border: 2px solid rgba(143, 133, 254, 0.13);
+    animation: leaderboard-fadein 1s cubic-bezier(.23,1.02,.73,1.01);
+}
+
+@keyframes leaderboard-fadein {
+    from { opacity: 0; transform: translateY(40px);}
+    to   { opacity: 1; transform: translateY(0);}
+}
+
+.leaderboard-title {
+    text-align: center;
+    color: #5434fa;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.2em;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    filter: drop-shadow(0 0 6px #fff3);
+}
+
+.fancy-leaderboard-list {
+    padding: 0;
+    margin: 0 auto 10px auto;
+    list-style: none;
+}
+
+.fancy-lb-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.21);
+    border-radius: 18px;
+    margin-bottom: 10px;
+    padding: 16px 14px;
+    box-shadow: 0 3px 12px 0 rgba(130, 94, 255, 0.09);
+    transition: transform 0.19s, box-shadow 0.22s;
+    font-size: 1.08em;
+    position: relative;
+    border: 1.5px solid transparent;
+}
+
+.fancy-lb-row:hover {
+    transform: scale(1.028) translateY(-2px);
+    box-shadow: 0 7px 22px 0 #5434fa29;
+    border: 1.5px solid #e9456080;
+}
+
+.first-place   { background: linear-gradient(90deg,#ffe175 22%,#fffbe0 100%)!important; }
+.second-place  { background: linear-gradient(90deg,#d5eaff 40%,#f0fcff 100%)!important; }
+.third-place   { background: linear-gradient(90deg,#ffe0d5 40%,#fff2e0 100%)!important; }
+
+.leader-index {
+    font-size: 1.55em;
+    min-width: 2.2em;
+    text-align: right;
+    font-weight: bold;
+    color: #5434fa;
+    margin-right: 10px;
+    filter: drop-shadow(0 2px 4px #e9456040);
+}
+
+.leader-medal {
+    font-size: 1.5em;
+    margin-right: 3px;
+    animation: medal-glow 1.7s infinite alternate;
+    vertical-align: middle;
+}
+.gold { color: #F6C700; }
+.silver { color: #7AC7F6; }
+.bronze { color: #D3A574; }
+
+@keyframes medal-glow {
+    from { filter: drop-shadow(0 0 8px #fffa); }
+    to   { filter: drop-shadow(0 0 16px #f6c70060); }
+}
+
+.lb-username {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    color: #433bb6;
+    margin-right: 17px;
+    letter-spacing: 0.02em;
+    font-size: 1.15em;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.lb-percent {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #e94560;
+    margin-right: 12px;
+    margin-left: 6px;
+}
+
+.lb-score {
+    font-size: 1em;
+    color: #888;
+    margin-right: 12px;
+}
+
+.lb-date {
+    font-size: 0.99em;
+    color: #848484;
+    margin-right: 10px;
+}
+
+.lb-pill {
+    display: inline-block;
+    padding: 3px 11px;
+    border-radius: 18px;
+    font-size: 0.93em;
+    margin-left: 5px;
+    background: linear-gradient(90deg,#f2eaff 60%,#d4ecfa 100%);
+    color: #5434fa;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 3px #5434fa14;
+}
+.lb-pill.cat {
+    background: linear-gradient(90deg,#e9fffd 60%,#e3f8ff 100%);
+    color: #28bfa3;
+}
+.lb-pill.amt {
+    background: linear-gradient(90deg,#ffe9ef 60%,#ffdbe9 100%);
+    color: #e94560;
+}
+
+.your-rank-glass {
+    background: rgba(255,255,255,0.25);
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65em;
+    font-size: 1.09em;
+    padding: 7px 21px;
+    margin: 0 auto;
+    color: #5333fa;
+    box-shadow: 0 1px 8px #a798fa1a;
+}
+.your-rank-badge {
+    background: linear-gradient(90deg,#5434fa 45%,#e94560 100%);
+    color: #fff;
+    border-radius: 11px;
+    font-weight: 700;
+    font-size: 1.05em;
+    padding: 5px 14px;
+    margin-left: 5px;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 7px #e9456033;
+    text-shadow: 0 1px 7px #433bb661;
 }
