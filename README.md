@@ -198,3 +198,9 @@ questions.json
 - I have finished working on the LeaderBoard page front end.
 - Expecting Partner for to finish backend logic part for the LeadeBoard page.so it can count the percentage instead of direct scores
 
+### Commit #17: LeaderBoard 
+**Author**: Akram Hossain  
+**Date, Time**: July 28, ~4.11 p.m.
+Shared Result View: Displays a public quiz result fetched from the server using a unique result ID passed via URL query parameter (?id=).Personal Result View: Shows the user's recent quiz result stored in localStorage after completing a quiz.
+Fetches and displays shared quiz results from the server using /api/result/{id}.Shows personal quiz results from localStorage.this is the modified version of the older 1
+
