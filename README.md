@@ -307,3 +307,16 @@ Implemented dynamic navbar update showing logged-in user and logout button; logo
 
 - To better understand the modifications, please check the comments inside the code, I tried to explain it nicely.
 
+
+
+### Commit #24: Pushed User.js 
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~06:15 p.m.
+
+- As I worked and finished set up MongoDB already (I did it yesterday night), now working on the User.js part to transmit data properly
+- Here I have extended scores array to store additional quiz metadata: difficulty (quiz level), category (quiz subject), and amount (number of questions per quiz attempt).
+- The scores array in each user document now records not only the score, total, and date, but also the difficulty level, category, and number of questions for every quiz attempt.
+- This structure enables richer statistics and filtering (for example: viewing highest scores by category/difficulty, or analyzing performance trends based on quiz settings etc which in this project we have not utilized that much, but later if work more on it, probably I will utilize it, that's why kept the structure like this).
+- These changes are very much helpful to support new Project 3 features such as difficulty/category leaderboards and personalized profile statistics.
+
+
