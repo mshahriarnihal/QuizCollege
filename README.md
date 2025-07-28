@@ -205,7 +205,7 @@ Shared Result View: Displays a public quiz result fetched from the server using 
 Fetches and displays shared quiz results from the server using /api/result/{id}.Shows personal quiz results from localStorage.this is the modified version of the older 1
 
 
-### Commit #17: Results history page
+### Commit #18: Results history page
 **Author**: Akram Hossain  
 **Date, Time**: July 28, ~5.11 p.m.
 Authentication:
