@@ -283,7 +283,7 @@ Displays score, date, and a detailed summary with color-coded answers (green for
 
 
 
-### Commit #23: Modified final CSS for project 3 (update 4.1) 
+### Commit #23: Modified and Final app.js for project 3 (update 2.1) 
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 28, ~06:02 p.m.
 
