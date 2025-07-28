@@ -1,10 +1,12 @@
+<!-- Modification 4.1.0. This is the revised modified version of our home page. Mubasshir Al Shahriar is making the modifications to serve necessary requirements for the project 3 on top of what Mubasshir (me) finalized for Project 2 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Quiz College</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
 <nav class="navbar fancy-navbar">
@@ -13,6 +15,8 @@
       <button id="darkModeToggle" class="darkmode-btn" aria-label="Toggle dark mode">🌙</button>
       <a href="index.html" class="active-link">Home</a>
       <a href="results_history.html">Old Results</a>
+              <a href="profile.html">My Profile</a> <!--Adding the new pages for users which are essential for the project 3 part.-->
+              <a href="leaderboard.html">Leaderboard</a>
     </span>
 </nav>
 <div class="home-hero animated-bg">
@@ -22,11 +26,12 @@
                 <h1 class="big-hero pulse">🧠 Test Your EGO! </h1>
                 <p class="subtitle">Stressed with your CSCI-355? Try this now! Ready to conquer the quiz challenge?<br>
                     Thrilling, fun, and full of surprises. Learn with Fun! Start now and see how high your score can fly!</p>
-                <ul class="home-feature-list">
-                    <li><span class="star">★</span> Hand-picked questions every round by expert!</li>
-                    <li><span class="star">★</span> Timer for an extra thrill!</li>
+                <ul class="home-feature-list"> <!--Updating info about our features as we have added some more!-->
+                    <li><span class="star">★</span> Hand-picked questions every round by expert (well, now by Trivia :P)!</li>
+                    <li><span class="star">★</span> Timer for an extra thrill! You choose more question, you get more thrill as we won't increase the time for you! :P But you will have more questions to increase the percentage of your correct answer anyway. </li>
                     <li><span class="star">★</span> Beautiful dark mode &amp; sound effects to prevent your boredom!</li>
                     <li><span class="star">★</span> All your scores are saved. So you can challenge yourself daily!</li>
+                    <li><span class="star">★</span> Share your achievements with your friends after finishing quiz! </li>
                 </ul>
                 <button id="startBtn" class="btn-main big-btn neon-glow">Start Quiz <span></span></button>
             </div>
@@ -53,7 +58,7 @@
 
 </footer>
 
-<!-- Might add a script to link small audio later -->
+<!-- Might add a script to link small audio later. Update on July 28: Already done inside quiz.html, no longer needed to add anything here. -->
 <script src="app.js"></script>
 </body>
 </html>
