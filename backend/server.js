@@ -1,4 +1,12 @@
-
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const cors = require('cors');
+require('dotenv').config();
+const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const User = require('./User');
+const QuizResult = require('./QuizResult'); // Might need to check again here later
 
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
