@@ -5,7 +5,122 @@
 **Group Members**:  
   i) Md Akram Hossain  
   ii) Mubasshir Al Shahriar  
-**Session**: Summer 2025  
+**Session**: Summer 2025 Semester July Session 
+
+## Bried Report:
+
+### Overview:
+
+## 🎓 Quiz College
+
+Quiz College is a full-stack quiz web application where users can create accounts, play custom quizzes, view detailed results, track performance history, and compete on a exciting looking leaderboard. To be little more narcissistic, they can even share their scorecard on social media or with their friends too! Through this project of CSCI-355 course at CUNY Queens College, Md Akram Hossain and Mubasshir Al Shahriar, under the guidance of Professor Nikola Baci, showing their expertise in both front-end and back-end web development. The quiz app delivers a dynamic, thrilling, and engaging quiz experience powered by real-time logic and Open Trivia DB API.
+
+
+## 🔗 Live Site URL: https://quizcollege-390a56929cad.herokuapp.com
+
+
+## Main Features:
+
+- Dynamic quizzes.
+- User can select their preferred category, difficulty level (based on age range), and number of questions they want to play before starting the game.
+- Real-time scoring with instant feedback sounds. Paying attention to the sounds, you can know if you got the answer correct or not right after finalizing your answer for a question.
+- Dark mode toggle and responsive UI for all devices
+- User friendly, simple, nice, easy navigation system. You can easily navigate between Home, Old Results, Your Profile (Dashboard), and Leaderboard pages.
+- Home page keeps you updated with what we are offering with a nice UI. You can press the "Start Quiz" button any time to go to the quiz page and start the game. Old Results shows all your previous attempts' scores with date and time. You can find the same information on your dashboard (My Profile tab) too, but it is basically your dashboard, which shows more details, like greets you with your name, shows your highest score till now, total number of attempts etc too. You can start a new game from this page too if you want. Leaderboard page shows the top 10 competitor. Top 3 gets gold, silver, and bronzze medal in ordeer by the way! :P As you can select how many questions to answer, we don't just blindly announce top correct scorer as winner, rather we value the ratio!
+- After each quiz, users see their total score, Color-coded breakdown of each question, Correct vs. selected answers.
+ 
+Authentication:
+- We have JWT-based signup & login Auth tokens stored securely in localStorage
+- Protected routes: quiz, results, profile, and leaderboard pages require user's login to guarantee our user's privacy and data security.
+
+Shareable Results:
+- Every quiz attempt generates a unique result ID
+- Therefore, you can share your scorecard (result link) with friends (requires login to view to maintain our privacy btw)
+
+Additionally:
+- Clean animations, interactive UI, modal quiz setup
+- Reusable auth utility functions for all pages
+- MongoDB schema tracks not just scores, but full quiz metadata
+- Heroku deployment with MongoDB Atlas backend
+- The limited timer makes your experience even more thrilling!
+- You can always choose to restart the quiz during the game in case you want to. It will ask you once to confirm though.
+- Last but not the least, don't forget to check out the cool logo we have designed only for you! :") 🥲
+
+## How to run on web:
+Just visit the link: https://quizcollege-390a56929cad.herokuapp.com/ , if you are visiting it first time, please sign up with a user name and password, otherwise, enter your existing username, password to login. Once you are loggin in, press start quiz button to play, or navigate our platform if you want!
+
+## How to run locally:
+
+#### i) Clone the repo & install dependencies:
+git clone <your-repo-url>
+cd quiz-college
+npm install
+
+#### ii) Create a .env file:
+MONGO_URI=your-mongo-uri
+JWT_SECRET=your-secret-key
+
+#### iii) Start the server:
+node server.js
+
+#### iv) Open on browser:
+http://localhost:3000
+
+
+#### Else, if you don't want any to go anymore technical, just download everything from my repo and run node server.js or nodemon server.js and visit localhost: 3000 after setting the .env file!
+
+
+## Roles (Very Briefly):
+
+### Md Akram Hossain:
+
+- Created major HTML structures for signin.html, results.html, leaderboard.html, results_history.html entirely.
+- Designed enhanced CSS layout and styling framework for Project 2
+- Implemented leaderboard UI, sorting, and data rendering in leaderboard.html front-end page.
+- Developed results_history.page's view with quiz breakdown and styling
+- Collaborated in debugging and frontend integration
+- Coordinated feature testing and validated flows across pages
+- Contributed to planning, design alignment, and project documentation
+- Re-modified results.html, results_history.html page for Project 3
+- Setup initial server.js for the Project 2. 
+- Updated and pushed package.json, question.json during the progress of Project 2
+- Coordinated in finalizing the project, run few tests.
+- For results_history page, sorted results by date (oldest first) using some logics defined by Mubasshir inside app.js, and generated HTML for each attempt.
+- Collaborated with group partner and helped him to fix some bugs
+
+### Mubasshir Al Shahriar: 
+
+- Led the project from planning to deployment, instructed and helped group partner Md Akram Hossain to make and stay on track with a complete planning
+- Built nearly all backend logic using Node.js, Express, and MongoDB during Project 3.
+- After Md Akram Hossain setup the initial server.js during Project 2, Mubasshir Al Shahriar made necessary modification and small bug fixes.
+- Started the project with index.html, built the homepage completely for Project 2. Then re-modified after starting the Project 3.
+- Created the initial CSS to make future plan on how to organize/design the enhanced version of CSS collaborating with Md Akram Hossain.
+- Contributed in enhancing, modifying, and making adjustment for the Project 2 version of CSS.
+- During Project 3, made all additional CSS design required to meet the goals of Project 3. Modified the styles.css as needed, re-decorated the CSS style for the leaderboard design.
+- During Project 2, developed the full app.js, run bug-testing, fixed bugs, modified based on gradual progress of both of the team members, and finalized it for Project 2.
+- During Project 3, re-modified app.js to meet the planning the group made for the Project 3, developed all necessary logics, kept connected with the database and Trivia API
+- Implemented JWT-based authentication, session handling, route protection and utilized the token function in every pages where needed and suggested team member to do the same.
+- Developed all core frontend interactivity in app.js, including: Dynamic quiz flow, Modal for quiz customization, Score calculation (select topper based on percentage), sound feedback, auth control.
+- Integrated Trivia API with difficulty/category filters
+- Built major html structure for index.html and quiz.html entirely during the progress of both Project 2 and Project 3.
+- Built profile.html and signup.html page, their logic, front-end etc during project 3 as they were added requirements for project 3.
+- Built the logic part of result history, and result sharing (using ID based link) on social or with friends
+- Added the timer feature, modified later as needed.
+- Designed and enhanced UI/UX: animations, dark mode, responsive layout
+- Setup and managed the connecting to MongoDB part for Project 3.
+- During Project 3, made all necessary modification for server.js to correctly connect, fetch, auth, and finally deploy
+- Managed Heroku deployment, MongoDB Atlas setup, and .env configuration
+- Generated a favicon icon/logo and added it to the .html pages
+- Worked with the Trivia API
+- Developed and pushed the User.js file for the backend part, additionally had to create another one named "QuizResult.js" to keep track properly on the quiz result and all metadata.
+- Coordinated merging of all pages, finalized structure, and styling consistency
+
+
+
+
+Some stuffs got overlapped during development as we worked together on few files too, and also helped fixing some issues we faced. To understand better and who exactly did what, you can read the below full progress report, which we used to write on real-time during the development of the project, to stay on track, keep track of what our group partner doing, and collaborate perfectly. These are the refined version of all commits, changed, modifications, additions we made, we have tried to keep only the major and important commits and planning there.
+
+## Full report, about everything, every steps, how we kept going and how was the full progess:
 
 ## Commit History
 (Here keeping together only the main and mentionable commits, changes, modifications, works to keep track, collaborate, and to make sure viewers can get a good overview of the gradual development process of our project)
