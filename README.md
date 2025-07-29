@@ -126,6 +126,8 @@ Some stuffs got overlapped during development as we worked together on few files
 (Here keeping together only the main and mentionable commits, changes, modifications, works to keep track, collaborate, and to make sure viewers can get a good overview of the gradual development process of our project)
 
 
+#### [#### Progress of Project 2 phase starts here and continues till commit #13]
+
 ### Commit #1: Initial index.html  
 **Author**: Mubasshir Al Shahriar  
 **Date, Time**: July 24, ~9:50 p.m.  
