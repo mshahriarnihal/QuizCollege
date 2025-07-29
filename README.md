@@ -1,4 +1,4 @@
-# Project 2 for CSCI-355: Internet and Web Technologies
+# Project 2 + 3 (Merged) for CSCI-355: Internet and Web Technologies
 
 **Course**: CSCI-355: Internet and Web Technologies  
 **Instructor**: Professor Nikola Baci  
@@ -357,6 +357,18 @@ Until project 2, Md Akram Hossain worked on this server.js. But after starting p
 - To make it actually work, I have also added some additional class to the end of the CSS file (for ex: "leaderboard-glass," "@Keyframes leaderboard-fadein," ".fancy-leaderboard-list" etc).
 
 - Next, I am going to wrap everything up, write an overview for the final (mergerd project 2 + project 3) project, re-deploy on heroku and add the ip address of the heroku app to MongoDB.
+
+
+### Project Closure: Deployment on Heroku , Connecting Heroku App to MongoDB, and Finishing Touch
+**Author**: Mubasshir Al Shahriar  
+**Date, Time**: July 28, ~09:41 p.m.
+
+- Finally we have reached our goal.
+- I have set the accessing IP address for my MongoDB cluster0 to 0.0.0.0/0 to ensure proper access from heroku app
+- I have deployed everything on heroku successfully after ensuring the final touch and revise for all files and set up the MongoURI and JWT correctly.
+- After deployment, I have run the webapp several times, tested, and made sure everything is working perfectly.
+- Thanks if you reached here skimming or reading or anyhow. Big thanks to my group partner Md Akram Hossain for his valuable time and kind cooperation. Also, thanks to our instructor Professor Nikola Baci for kind support and valuable guidances.
+
 
 
 
