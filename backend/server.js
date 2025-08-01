@@ -23,7 +23,8 @@ mongoose.connect(process.env.MONGO_URI, {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, '..')));
+
 
 // For the Sign Up endpoint
 app.post('/api/signup', async (req, res) => {
