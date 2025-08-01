@@ -62,6 +62,11 @@ app.post('/api/signin', async (req, res) => {
 });
 
 
+app.get('/', (req, res) => {
+  res.send('QuizCollege backend is running!');
+});
+
+
 //Quiz Session starts here (starting on July 27)
 
 // Utilizing the given  Open Trivia DB for quiz questions
