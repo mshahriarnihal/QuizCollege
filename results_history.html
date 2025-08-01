@@ -10,7 +10,7 @@
 
 
 <script>
-    // Redireect to signin if not loggeed in, manually putting it here as the one in app.js was not working properly on this page or maybe my browser was caching old data. Hpwever, this script should provide extra protection.
+    // Redirect to signin if not logged in, manually putting it here as the one in app.js was not working properly on this page or maybe my browser was caching old data. Hpwever, this script should provide extra protection.
     if (!localStorage.getItem('token')) {
         window.location.href = "signin.html";
     }
@@ -36,7 +36,7 @@
     &copy; 2025 A Md Akram Hossain & Mubasshir Al Shahriar Production.
 </footer>
 
-<!--Modifying the script, it won't loaad from local machine browser cookie anymore -->
+<!--Modifying the script, it won't load from local machine browser cookie anymore -->
 <script>
     // Redirect to signin if not logged in
     if (!localStorage.getItem('token')) {
@@ -65,7 +65,7 @@
             document.getElementById('darkModeToggle').onclick = toggleDarkMode;
         }
 
-        // --- Load user results from BACkKEND (not from localStorage!) ---
+        // --- Load user results from BACKEND (not from localStorage!) ---
         const username = localStorage.getItem('username');
         let area = document.getElementById('historyArea');
         if (!username) {
@@ -80,8 +80,8 @@
                 area.innerHTML = "<p>No past results found in your account.</p>";
                 return;
             }
-            // Rewnder attempts: newest first
-            // Reverse so oldwest comes first (Quiz #1 is oldest)
+            // Render attempts: newest first
+            // Reverse so oldest comes first (Quiz #1 is oldest)
             const scoresInOrder = data.scores.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
             area.innerHTML = scoresInOrder.map((attempt, idx) => `
     <div class="question-card" style="margin-bottom:18px;">
