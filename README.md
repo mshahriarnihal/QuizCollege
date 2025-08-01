@@ -16,7 +16,7 @@
 Quiz College is a full-stack quiz web application where users can create accounts, play custom quizzes, view detailed results, track performance history, and compete on a exciting looking leaderboard. To be little more narcissistic, they can even share their scorecard on social media or with their friends too! Through this project of CSCI-355 course at CUNY Queens College, Md Akram Hossain and Mubasshir Al Shahriar, under the guidance of Professor Nikola Baci, showing their expertise in both front-end and back-end web development. The quiz app delivers a dynamic, thrilling, and engaging quiz experience powered by real-time logic and Open Trivia DB API.
 
 
-## 🔗 Live Site URL: https://quizcollege.onrender.com   ,   https://quizcollege-390a56929cad.herokuapp.com
+## 🔗 Live Site URL: https://quizcollege.onrender.com [updated working hosted link]  ,   https://quizcollege-390a56929cad.herokuapp.com [expired, older one]
 
 
 ## Main Features:
