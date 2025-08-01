@@ -120,6 +120,27 @@ http://localhost:3000
 
 Some stuffs got overlapped during development as we worked together on few files too, and also helped fixing some issues we faced. To understand better and who exactly did what, you can read the below full progress report, which we used to write on real-time during the development of the project, to stay on track, keep track of what our group partner doing, and collaborate perfectly. These are the refined version of all commits, changed, modifications, additions we made, we have tried to keep only the major and important commits and planning there.
 
+
+
+Some screenshots of how our WebApp output looks:
+
+<img width="2940" height="1679" alt="image" src="https://github.com/user-attachments/assets/5453fcc5-ca6e-42b9-ac59-e6dfa23cbb4e" />
+
+<img width="2940" height="1680" alt="image" src="https://github.com/user-attachments/assets/f1b69230-b4f8-485f-8136-2ad3aef12e38" />
+
+<img width="2940" height="1483" alt="image" src="https://github.com/user-attachments/assets/953d3301-1f0b-4b23-8858-010b54746691" />
+
+<img width="2940" height="1686" alt="image" src="https://github.com/user-attachments/assets/652ae4c2-0d2a-494d-8489-f7e9e7a87d35" />
+
+<img width="2940" height="1684" alt="image" src="https://github.com/user-attachments/assets/274e9d22-09cb-46b4-bbc7-3176c438b5db" />
+
+<img width="2940" height="1681" alt="image" src="https://github.com/user-attachments/assets/d8fd6a73-fe67-4d07-a886-0a2adfbda5c6" />
+
+
+
+
+
+
 ## Full report, about everything, every steps, how we kept going and how was the full progess:
 
 ## Commit History
