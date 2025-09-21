@@ -30,7 +30,7 @@ Quiz College is a full-stack quiz web application where users can create account
 - After each quiz, users see their total score, Color-coded breakdown of each question, Correct vs. selected answers.
  
 Authentication:
-- We have JWT-based signup & login Auth tokens stored securely in localStorage
+- We have JWT-based signup & login Auth tokens stored securely in local Storage
 - Protected routes: quiz, results, profile, and leaderboard pages require user's login to guarantee our user's privacy and data security.
 
 Shareable Results:
@@ -41,7 +41,7 @@ Additionally:
 - Clean animations, interactive UI, modal quiz setup
 - Reusable auth utility functions for all pages
 - MongoDB schema tracks not just scores, but full quiz metadata
-- Heroku deployment with MongoDB Atlas backend
+- Render deployment with MongoDB Atlas backend
 - The limited timer makes your experience even more thrilling!
 - You can always choose to restart the quiz during the game in case you want to. It will ask you once to confirm though.
 - Last but not the least, don't forget to check out the cool logo we have designed only for you! :") 🥲
