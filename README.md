@@ -47,7 +47,7 @@ Additionally:
 - Last but not the least, don't forget to check out the cool logo we have designed only for you! :") 🥲
 
 ## How to run on web:
-Just visit the link: https://quizcollege-390a56929cad.herokuapp.com/ , if you are visiting it first time, please sign up with a user name and password, otherwise, enter your existing username, password to login. Once you are loggin in, press start quiz button to play, or navigate our platform if you want!
+Just visit the link: https://quizcollege.onrender.com , if you are visiting it first time, please sign up with a user name and password, otherwise, enter your existing username, password to login. Once you are loggin in, press start quiz button to play, or navigate our platform if you want!
 
 ## How to run locally:
 
