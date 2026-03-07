@@ -7,7 +7,7 @@
   ii) Mubasshir Al Shahriar  
 **Session**: Summer 2025 Semester July Session 
 
-## Bried Report:
+## Brief Report:
 
 ### Overview:
 
